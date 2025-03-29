@@ -1,3 +1,6 @@
+import HomeHero from "./components/homepage/Hero";
+import OurServices from "./components/homepage/OurServices";
+import WhyNexoris from "./components/homepage/WhyNexoris";
 
 export const metadata = {
   title: "Next-Gen Software Solutions | Nexoris Technologies Ltd",
@@ -27,9 +30,9 @@ export const metadata = {
 export default function Home() {
   return ( 
     <>
-    <main className="">
-    <h1 className="text-secondary font-bold text-4xl">HELLO NEXORIS TECHNOLOGIES LTD</h1>
-    </main>
+    <HomeHero />
+    <OurServices />
+    <WhyNexoris />
     </>
   );
 }

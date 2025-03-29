@@ -1,21 +1,21 @@
 // layout.tsx
 import './globals.css';
-import { Lato, Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 
-const lato = Lato({
-  subsets: ['latin'],
-  variable: '--font-lato',
+const heading = Inter({
+  subsets: ["latin"],
+  variable: '--font-heading',
   weight: ['400', '700'],
 });
 
-const poppins = Poppins({
+const body = Inter({
   subsets: ['latin'],
-  variable: '--font-poppins',
-  weight: ['400', '600', '700'],
+  variable: '--font-body',
+  weight: ['300', '400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -53,10 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lato.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
       <Navbar />
-      <main className='pt-28 flex-1 relative z-0'>{children}</main>
+      <main className='relative z-0 bg-background'>{children}</main>
       <Footer className="relative z-0" />
       </body>
     </html>

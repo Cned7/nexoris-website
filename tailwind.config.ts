@@ -5,17 +5,23 @@ module.exports = {
  './src/app/**/*.{js,ts,jsx,mdx}',],
   theme: {
     extend: {
-       colors: {
-   primary: '#248ecc',
-   secondary: '#24427c',
-   tertiary: '#6cbe45',
-   accent: '#1f9245',
-   // Add more custom colors as needed
- },
+        colors: {
+        primary: {
+          background: "#070b10", 
+          cyan: "#05f3fc", 
+          graphite: "#1C1C1C", 
+          gray: "#a7b3ba",
+        },
+        secondary: {
+          purple: "#3e29d8", 
+          silver: "#d9dbdd", 
+          teal: "#006D77", 
+        },
+      },
 
    fontFamily: {
-    sans: ['var(--font-lato)', 'Lato'],
-    heading: ['var(--font-poppins)', 'Poppins'],
+    heading: ['var(--font-heading)', 'Inter'],
+    body: ['var(--font-body)', 'Inter'],
   },
     },
   },
