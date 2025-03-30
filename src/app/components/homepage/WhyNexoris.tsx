@@ -1,45 +1,57 @@
-import Image from "next/image";
+"use client";
 
-export default function WhyNexoris() {
+import Image from "next/image";
+import Link from "next/link";
+import React, { FC } from "react";
+
+const WhyNexoris: FC = () => {
   return (
-    <section className="relative bg-background text-silver py-4 md:py-10 px-6 md:px-16 overflow-hidden">
+    <section className="relative bg-background text-silver py-4 md:py-10 px-6 md:px-16 overflow-hidden xl-mt-5">
       {/* Background Shape */}
       <div className="absolute inset-0 flex justify-end">
-        <div className="w-3/5 h-full bg-gradient-to-l from-transparent to-purple rounded-l-full" />
+        <div className="w-fit md:w-3/5 h-full bg-gradient-to-l from-transparent to-purple rounded-l-full" />
       </div>
-      
-      <div className="relative container mx-auto flex flex-col md:flex-row items-center gap-12">
+
+      <h2 className="text-3xl text-center md:text-left mb-5 md:text-4xl lg:text-5xl font-bold text-silver leading-tight">
+        Why Nexoris?
+      </h2>
+
+      <div className="relative container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
         {/* Left: Content */}
-        <div className="md:w-3/5 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-silver leading-tight">
-            Why Nexoris?
-          </h2>
-          <p className="mt-6 text-lg text-gray max-w-2xl">
-            At Nexoris, we believe every challenge is an opportunity waiting to be unlocked. Our passion for innovation drives us to create transformative solutions that fuel your growth.
+        <div className="lg:w-3/5 text-center md:text-left">
+          <p className="md:mt-6 text-lg text-gray max-w-2xl">
+            Your choice of a tech partner shapes your future. At Nexoris, we make your success our mission—transforming ideas into tailored solutions, leveraging cutting-edge technology, and keeping you ahead in a fast-moving digital world. With Nexoris, you don’t just get solutions — you gain a competitive advantage.
           </p>
+
           <blockquote className="mt-6 text-lg italic border-l-4 border-primary pl-4 text-silver">
-            “We don’t just build technology; we build the future. Our mission is to turn your vision into reality, one groundbreaking solution at a time.” 
+            “We create innovative, tailored solutions that give you a strategic edge — empowering you to lead, adapt, and thrive in a rapidly evolving digital landscape.” 
             <span className="block mt-2 text-gray font-semibold">— Founder & CEO, Nexoris Technologies Ltd.</span>
           </blockquote>
+
           <div className="mt-8">
-            <button className="px-6 py-3 bg-teal md:bg-purple text-silver font-semibold rounded-lg shadow-md hover:bg-purple hover:bg-opacity-90 transition cursor-pointer">
+            <Link
+              href="/about"
+              className="px-6 py-3 bg-teal md:bg-purple text-silver font-semibold rounded-lg shadow-md md:hover:bg-teal hover:bg-purple hover:bg-opacity-90 transition cursor-pointer"
+            >
               Learn About Us
-            </button>
+            </Link>
           </div>
         </div>
-    
+
         {/* Right: Image Section */}
-        <div className="md:w-2/5 flex justify-center relative">
-          <div className="hidden md:block absolute -z-10 w-80 h-80 bg-gradient-to-r rounded-full opacity-20 blur-2xl" />
+        <div className="lg:w-2/5 flex justify-center relative">
+          <div className="hidden md:block absolute -z-10 w-80 h-80 bg-gradient-to-l md:bg-gradient-to-r rounded-full opacity-20 blur-2xl" />
           <Image
             src="/images/why-us.webp"
             alt="Why Choose Nexoris"
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             className="rounded-lg shadow-lg"
           />
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default WhyNexoris;

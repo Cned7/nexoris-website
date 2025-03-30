@@ -1,0 +1,86 @@
+"use client";
+
+import { useState } from "react";
+import { FaChevronUp } from "react-icons/fa";
+import Head from "next/head";
+
+const faqs = [
+  {
+    question: "What makes Nexoris different from other technology firms?",
+    answer: "Nexoris focuses on innovation-first, scalable solutions tailored to each client’s needs. We combine expertise in software, automation, and digital transformation to drive business growth.",
+  },
+  {
+    question: "What services does Nexoris offer?",
+    answer: "We provide custom software development, cloud solutions, AI-driven automation, SEO & content marketing, UX/UI design, and digital transformation consulting.",
+  },
+  {
+    question: "Who does Nexoris work with?",
+    answer: "Our clients range from startups to enterprises in FinTech, Healthcare, E-commerce, Manufacturing, Education, Retail, Logistics, and AI-driven businesses.",
+  },
+  {
+    question: "Do you offer ongoing support and maintenance?",
+    answer: "Yes! We provide post-launch support, maintenance, and continuous optimization to ensure long-term performance and adaptability.",
+  },
+  {
+    question: "How do I get started with Nexoris?",
+    answer: "Simply contact us through our form, book a free consultation, or send an email to discuss your project and partnership opportunities.",
+  },
+];
+
+export default function FAQs() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-16 px-6 md:px-16 bg-background">
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      </Head>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-gray text-center">Frequently Asked Questions</h2>
+        <div className="mt-8 space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border border-purple rounded-xl shadow-sm overflow-hidden"
+            >
+              <button
+                className="w-full flex justify-between items-center px-6 py-4 text-left text-gray font-medium focus:outline-none"
+                onClick={() => toggleFAQ(index)}
+              >
+                <span>{faq.question}</span>
+                <FaChevronUp
+                  className={`w-5 h-5 transition-transform transform ${
+                    openIndex === index ? "rotate-180 text-purple" : "text-gray"
+                  } cursor-pointer`}
+                />
+              </button>
+              {openIndex === index && (
+                <div className="px-6 pb-4 text-gray">{faq.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
