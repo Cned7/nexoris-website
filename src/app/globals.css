@@ -1,34 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #070b10;
-  --cyan: #05f3fc;
-  --graphite: #1C1C1C;
-  --purple: #3e29d8;
-  --silver: #d9dbdd;
-  --teal: #006D77;
-  --gray: #d9dbdd;
+  --background: #ffffff;
+  --heading: #24177a;
+  --text: #030013;
+  --button: #3e29d8;
+  --secondary-background: #f6f6ff;
+  --secondary-text: #f9f8fd;
+  --hover-color: #2ca2eb;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --font-heading: var(--font-heading-sans);
-  --font-body: var(--font-body-sans);
-  --color-cyan: var(--cyan);
-  --color-graphite: var(--graphite);
-  --color-purple: var(--purple);
-  --color-silver: var(--silver);
-  --color-teal: var(--teal);
-  --color-gray: var(--gray);
-  
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --color-button: var(--button);
+  --color-secondary-background: var(--secondary-background);
+  --color-secondary-text: var(--secondary-text);
+  --color-text: var(--text);
+  --color-heading: var(--heading);
+  --color-hover: var(--hover-color);
 }
-
 
 body {
   height: 100%;
   background-color: var(--background);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding:0;
+  padding: 0;
   box-sizing: border-box;
 }

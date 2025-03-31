@@ -1,28 +1,30 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
- './src/components/**/*.{js,ts,jsx,tsx,mdx}',
- './src/app/**/*.{js,ts,jsx,mdx}',],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,mdx}',
+  ],
   theme: {
     extend: {
-        colors: {
+      colors: {
         primary: {
-          background: "#070b10", 
-          cyan: "#05f3fc", 
-          graphite: "#1C1C1C", 
-          gray: "#a7b3ba",
+          background: '#ffffff',
+          heading: '#24177a',
+          text: '#030013',
+          button: '#3E29D8',
+          hover: '#2ca2eb',
         },
         secondary: {
-          purple: "#3e29d8", 
-          silver: "#d9dbdd", 
-          teal: "#006D77", 
+          background: '#f6f6ff',
+          text: '#F9F8FD',
         },
       },
 
-   fontFamily: {
-    heading: ['var(--font-heading)', 'Inter'],
-    body: ['var(--font-body)', 'Inter'],
-  },
+      fontFamily: {
+        heading: ['var(--font-heading)', 'Inter'],
+        body: ['var(--font-body)', 'Inter'],
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge'
 
 export function cn(...classes: string[]) {
-  return twMerge(classes.join(" "));
+  return twMerge(classes.join(' '))
 }

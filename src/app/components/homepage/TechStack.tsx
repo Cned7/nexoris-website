@@ -1,50 +1,62 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/autoplay";
+import Image from 'next/image'
+import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/autoplay'
 
 // Tech stack logos
 const techStack = [
-  { name: "Redux", logo: "/logos/redux.svg" },
-  { name: "React.js", logo: "/logos/react.svg" },
-  { name: "Node.js", logo: "/logos/node-js.svg" },
-  { name: "TypeScript", logo: "/logos/typescript.svg" },
-  { name: "Python", logo: "/logos/python.svg" },
-  { name: "Puppet", logo: "/logos/puppet.svg" },
-  { name: "AWS", logo: "/logos/aws.svg" },
-  { name: "Azure", logo: "/logos/azure.svg" },
-  { name: "GCP", logo: "/logos/gcp.svg" },
-  { name: "Docker", logo: "/logos/docker.svg" },
-  { name: "Kubernetes", logo: "/logos/kubernetes.svg" },
-  { name: "Terraform", logo: "/logos/terraform.svg" },
-  { name: "Redis", logo: "/logos/redis.svg" },
-  { name: "GraphQL", logo: "/logos/graphql.svg" },
-  { name: "Xcode", logo: "/logos/xcode.svg" },
-  { name: "MongoDB", logo: "/logos/mongodb.svg" },
-  { name: "Flutter", logo: "/logos/xamarin.svg" },
-  { name: "Xamarin", logo: "/logos/flutter.svg" },
-];
+  { name: 'Redux', logo: '/logos/redux.svg' },
+  { name: 'React.js', logo: '/logos/react.svg' },
+  { name: 'Node.js', logo: '/logos/node-js.svg' },
+  { name: 'TypeScript', logo: '/logos/typescript.svg' },
+  { name: 'Python', logo: '/logos/python.svg' },
+  { name: 'Puppet', logo: '/logos/puppet.svg' },
+  { name: 'AWS', logo: '/logos/aws.svg' },
+  { name: 'Azure', logo: '/logos/azure.svg' },
+  { name: 'GCP', logo: '/logos/gcp.svg' },
+  { name: 'Docker', logo: '/logos/docker.svg' },
+  { name: 'Kubernetes', logo: '/logos/kubernetes.svg' },
+  { name: 'Terraform', logo: '/logos/terraform.svg' },
+  { name: 'Redis', logo: '/logos/redis.svg' },
+  { name: 'GraphQL', logo: '/logos/graphql.svg' },
+  { name: 'Xcode', logo: '/logos/xcode.svg' },
+  { name: 'MongoDB', logo: '/logos/mongodb.svg' },
+  { name: 'Flutter', logo: '/logos/xamarin.svg' },
+  { name: 'Xamarin', logo: '/logos/flutter.svg' },
+]
 
 export default function TechStack() {
   return (
     <section className="bg-background py-8 px-6 md:px-12 text-silver container mx-auto relative">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-silver">Our Technology Stack</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-silver">
+          Our Technology Stack
+        </h2>
         <p className="text-gray max-w-2xl mx-auto mb-10">
-          We use cutting-edge technology to drive innovation. Our diverse expertise ensures we select the right tools for your project.
+          We use cutting-edge technology to drive innovation. Our diverse
+          expertise ensures we select the right tools for your project.
         </p>
       </div>
 
       {/* Mobile View - Grid Layout */}
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 md:hidden">
         {techStack.map(({ name, logo }, index) => (
-          <div key={index} className="flex flex-col items-center text-center p-4">
-            <Image src={logo} alt={name} width={50} height={50} className="w-12 h-12" />
+          <div
+            key={index}
+            className="flex flex-col items-center text-center p-4"
+          >
+            <Image
+              src={logo}
+              alt={name}
+              width={50}
+              height={50}
+              className="w-12 h-12"
+            />
             <span className="text-sm font-medium text-gray mt-2">{name}</span>
           </div>
         ))}
@@ -77,10 +89,21 @@ export default function TechStack() {
             className="w-full"
           >
             {techStack.map(({ name, logo }, index) => (
-              <SwiperSlide key={index} className="flex justify-center bg-inherit">
+              <SwiperSlide
+                key={index}
+                className="flex justify-center bg-inherit"
+              >
                 <div className="flex flex-col items-center text-center p-4">
-                  <Image src={logo} alt={name} width={50} height={50} className="w-12 h-12" />
-                  <span className="text-sm font-medium text-gray-300 mt-2">{name}</span>
+                  <Image
+                    src={logo}
+                    alt={name}
+                    width={50}
+                    height={50}
+                    className="w-12 h-12"
+                  />
+                  <span className="text-sm font-medium text-gray-300 mt-2">
+                    {name}
+                  </span>
                 </div>
               </SwiperSlide>
             ))}
@@ -90,9 +113,13 @@ export default function TechStack() {
 
       {/* Call to Action Section */}
       <div className="text-center mt-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-silver mb-4">Let’s Build Something Extraordinary</h3>
+        <h3 className="text-2xl md:text-3xl font-bold text-silver mb-4">
+          Let’s Build Something Extraordinary
+        </h3>
         <p className="text-gray max-w-xl mx-auto mb-10">
-          Your vision. Our expertise. Together, we’ll drive innovation and achieve transformative success. Partner with Nexoris to bring your ideas to life and unlock new opportunities.
+          Your vision. Our expertise. Together, we’ll drive innovation and
+          achieve transformative success. Partner with Nexoris to bring your
+          ideas to life and unlock new opportunities.
         </p>
         <Link
           href="/contact"
@@ -103,5 +130,5 @@ export default function TechStack() {
         </Link>
       </div>
     </section>
-  );
+  )
 }
