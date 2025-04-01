@@ -148,7 +148,7 @@ const AboutPage: FC = () => {
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Cybersecurity</h3>
-            <p className="text-gray-600">
+            <p className="text-text">
               Advanced security frameworks to protect your business from evolving threats.
             </p>
           </div>
