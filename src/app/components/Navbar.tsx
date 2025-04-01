@@ -34,7 +34,13 @@ const Navbar: React.FC = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
         <div className="relative w-28 h-8 sm:w-32 sm:h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 xl:w-44 xl:h-16">
-      </div>
+          <Image
+            src="/nexoris-logo.png"
+            alt="Nexoris Technologies Ltd"
+            fill
+            className="object-contain"
+          />
+        </div>
 
         </Link>
 
