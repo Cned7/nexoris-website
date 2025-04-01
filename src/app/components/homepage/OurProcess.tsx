@@ -57,12 +57,12 @@ const steps = [
 
 export default function OurProcess() {
   return (
-    <section className="bg-background pt-12 pb-8 px-6 md:px-10 lg:px-16 text-silver">
+    <section className="relative bg-background border border-button rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-6">
       <div className="w-full mx-auto text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
+        <h2 className="text-2xl md:text-3xl font-bold text-heading py-5">
           Our Step-by-Step Process: From Vision to Success
         </h2>
-        <p className="text-gray max-w-3xl mx-auto mt-4">
+        <p className="text-text max-w-3xl mx-auto mt-4">
           At Nexoris Technologies, we eliminate roadblocks and unlock new
           possibilities with a structured, adaptable approach that drives faster
           innovation, seamless execution, and long-term success.
@@ -71,11 +71,11 @@ export default function OurProcess() {
       <div className="relative max-w-5xl mx-auto">
         {steps.map(({ title, description, Icon }, index) => (
           <div key={index} className="relative flex items-start mb-10">
-            <div className="flex-shrink-0 w-14 h-14 bg-[#3E29D8] text-[#3E29D8] rounded-full flex items-center justify-center shadow-lg">
-              <Icon className="text-3xl text-white" />
+            <div className="flex-shrink-0 w-14 h-14 bg-button rounded-full flex items-center justify-center shadow-lg">
+              <Icon className="text-3xl text-secondary-text" />
             </div>
             <div className="ml-6">
-              <h3 className="text-xl font-semibold text-white">{title}</h3>
+              <h3 className="text-xl font-semibold text-heading">{title}</h3>
               <p className="text-gray mt-2 max-w-2xl">{description}</p>
             </div>
             {index !== steps.length - 1 && (

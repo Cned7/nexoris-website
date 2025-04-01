@@ -39,24 +39,24 @@ const industries: Industry[] = [
 
 const IndustriesSection: React.FC = () => {
   return (
-    <section className="bg-background text-silver py-8 px-6 md:px-8 lg:px-16 lg:mt-10">
+    <section className="bg-background mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-6">
+        <h2 className="text-2xl md:text-4xl font-semibold text-heading mb-6">
           The Industries We Serve
         </h2>
-        <p className="text-gray mb-12 text-lg max-w-3xl mx-auto">
+        <p className="text-text mb-12 text-lg max-w-3xl mx-auto">
           We collaborate with visionary businesses across diverse industries,
           delivering tailored solutions that drive real-world impact.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
         {industries.map((industry, index) => (
           <div
             key={index}
-            className="relative group p-5 bg-gray-900 rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:shadow-cyan-500/50 transition-shadow duration-300"
+            className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300"
           >
             {/* Next.js Optimized Image */}
-            <div className="relative w-full h-40">
+            <div className="relative w-full h-35">
               <Image
                 src={industry.image}
                 layout="fill"

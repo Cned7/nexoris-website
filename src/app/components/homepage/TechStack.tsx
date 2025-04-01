@@ -31,55 +31,23 @@ const techStack = [
 
 export default function TechStack() {
   return (
-    <section className="bg-background py-8 px-6 md:px-12 text-silver container mx-auto relative">
+    <section className="relative mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21 overflow-hidden xl-mt-5 py-6">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-silver">
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-heading">
           Our Technology Stack
         </h2>
-        <p className="text-gray max-w-2xl mx-auto mb-10">
+        <p className="text-text max-w-2xl mx-auto mb-10">
           We use cutting-edge technology to drive innovation. Our diverse
           expertise ensures we select the right tools for your project.
         </p>
       </div>
 
-      {/* Mobile View - Grid Layout */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 md:hidden">
-        {techStack.map(({ name, logo }, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center text-center p-4"
-          >
-            <Image
-              src={logo}
-              alt={name}
-              width={50}
-              height={50}
-              className="w-12 h-12"
-            />
-            <span className="text-sm font-medium text-gray mt-2">{name}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop View - Circular Swiper + Neon Effect */}
-      <div className="hidden md:flex justify-center items-center relative">
-        {/* Neon Circular Effect - Reduced Size */}
-        <div className="relative flex justify-center items-center">
-          <div className="absolute h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] bg-background z-[1]"></div>
-          <div
-            className="relative h-[125px] w-[125px] lg:h-[200px] lg:w-[200px] rounded-full border-8 border-e-0 border-t-0 
-            border-b-0 border-purple p-3 grid place-items-center"
-          >
-            <div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[2] h-[100px] w-[100px] 
-              lg:h-[150px] lg:w-[150px] rounded-full border-4 border-cyan border-e-0 border-t-0 border-b-0"
-            ></div>
-          </div>
-        </div>
+      {/* Tech Stack Swiper */}
+      <div className="bg-heading rounded-lg flex justify-center px-3 items-center relative w-full h-[180px]">
 
         {/* Swiper Logos - Positioned Above Neon Effect */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[3] w-full max-w-3xl">
+      
           <Swiper
             slidesPerView={5}
             spaceBetween={20}
@@ -101,29 +69,29 @@ export default function TechStack() {
                     height={50}
                     className="w-12 h-12"
                   />
-                  <span className="text-sm font-medium text-gray-300 mt-2">
+                  <span className="text-sm md:text-lg font-medium text-secondary-text mt-2">
                     {name}
                   </span>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        
       </div>
 
       {/* Call to Action Section */}
       <div className="text-center mt-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-silver mb-4">
+        <h3 className="text-2xl md:text-3xl font-bold text-heading mb-4">
           Let’s Build Something Extraordinary
         </h3>
-        <p className="text-gray max-w-xl mx-auto mb-10">
+        <p className="text-text max-w-xl mx-auto mb-10">
           Your vision. Our expertise. Together, we’ll drive innovation and
           achieve transformative success. Partner with Nexoris to bring your
           ideas to life and unlock new opportunities.
         </p>
         <Link
           href="/contact"
-          className="bg-purple text-silver px-6 py-3 rounded-lg text-lg font-semibold hover:bg-teal transition duration-300"
+          className="bg-button text-secondary-text px-6 py-3 rounded-lg text-lg font-semibold hover:bg-hover transition duration-300"
           aria-label="Get started with Nexoris"
         >
           Get Started

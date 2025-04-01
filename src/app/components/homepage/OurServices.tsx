@@ -36,7 +36,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-20">
+    <section className="mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-heading">Our Services</h2>
         <p className="text-text max-w-2xl mx-auto mb-8">
@@ -47,19 +47,19 @@ export default function OurServices() {
           {services.map(({ title, description, Icon, link }, index) => (
             <div
               key={index}
-              className="p-6 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300"
+              className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300"
             >
               <div className="mb-4">
                 <Icon
-                  className="text-[#54b7f5] text-4xl lg:text-4xl mx-auto font-body font-light"
+                  className="text-hover text-4xl lg:text-4xl mx-auto font-body font-light"
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-heading">{title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-text">{title}</h3>
               <p className="text-text mt-3">{description}</p>
               <div className="mt-6 text-center">
                 <Link href={link}>
-                  <span className="inline-block bg-[#2ca2eb] text-secondary-text px-5 py-2 rounded-lg font-semibold text-sm hover:bg-heading transition duration-300">
+                  <span className="inline-block bg-hover text-secondary-text px-5 py-2 rounded-lg font-semibold text-sm hover:bg-heading transition duration-300">
                     Learn More
                   </span>
                 </Link>

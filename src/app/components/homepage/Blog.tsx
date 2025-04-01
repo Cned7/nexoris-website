@@ -35,10 +35,10 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <section className="py-8 px-6 md:px-8 lg:px-16 bg-background">
+    <section className="relative bg-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 py-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-silver">Latest Insights</h2>
-        <p className="mt-4 text-lg text-gray">
+        <h2 className="text-4xl font-bold text-heading">Latest Insights</h2>
+        <p className="mt-4 text-lg text-text">
           Stay ahead with expert insights, trends, and strategies.
         </p>
       </div>
@@ -48,21 +48,21 @@ export default function BlogSection() {
           <Link
             key={index}
             href={post.link}
-            className="relative group p-5 bg-gray-900 rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-cyan-500/50 transition-shadow duration-300"
+            className="relative group bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300 p-4"
           >
             <Image
               src={post.image}
               alt={post.title}
               width={300}
-              height={200}
-              className="w-full h-40 object-cover rounded-lg"
+              height={150}
+              className="w-full md:h-72 lg:h-35 object-cover rounded-lg"
             />
             <div className="pt-5">
-              <h3 className="text-base font-semibold text-silver transition">
+              <h3 className="text-base font-semibold text-text transition">
                 {post.title}
               </h3>
-              <p className="mt-2 text-gray font-base">{post.description}</p>
-              <span className="mt-4 inline-block text-silver hover:text-gray bg-teal bg-hover-purple font-medium py-2 rounded-lg px-4 hover:bg-purple">
+              <p className="mt-2 text-text font-base">{post.description}</p>
+              <span className="mt-4 inline-block text-secondary-text bg-hover font-medium py-1 rounded-lg px-4 hover:bg-heading">
                 Read More
               </span>
             </div>
@@ -73,7 +73,7 @@ export default function BlogSection() {
       <div className="mt-12 text-center">
         <Link
           href="/blog"
-          className="inline-block bg-purple text-gray px-6 py-3 rounded-lg text-lg font-medium hover:bg-teal transition"
+          className="inline-block bg-heading text-secondary-text px-6 py-2 rounded-lg text-lg font-medium hover:bg-hover transition"
         >
           View All Articles
         </Link>

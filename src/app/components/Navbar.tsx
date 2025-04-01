@@ -29,13 +29,13 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className="bg-background shadow-lg fixed top-0 z-10 w-full h-14 xl:h-18 flex items-center px-4 md:px-6 lg:px-12">
-      <div ref={navRef} className="container mx-auto flex justify-between items-center w-full xl:px-8">
+    <nav className="bg-background shadow-lg fixed top-0 z-10 w-full h-14 xl:h-18 flex items-center">
+      <div ref={navRef} className="container flex justify-between items-center w-full mx-4 md:mx-6 lg:mx-12 xl:mx-21 overflow-hidden">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-        <div className="relative w-28 h-8 sm:w-32 sm:h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 xl:w-44 xl:h-16 -ml-4">
+        <div className="relative w-28 h-8 sm:w-32 sm:h-10 md:w-36 md:h-12 lg:w-40 lg:h-14 xl:w-44 xl:h-16">
   <Image
-    src="/Nexoris.png"
+    src="/images/nexoris-logo.png"
     alt="Nexoris Technologies Ltd"
     fill
     className="object-contain"
