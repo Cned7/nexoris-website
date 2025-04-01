@@ -49,7 +49,7 @@ export default function TechStack() {
         {/* Swiper Logos - Positioned Above Neon Effect */}
       
           <Swiper
-            slidesPerView={5}
+            slidesPerView={'auto'}
             spaceBetween={20}
             loop={true}
             autoplay={{ delay: 2000, disableOnInteraction: false }}

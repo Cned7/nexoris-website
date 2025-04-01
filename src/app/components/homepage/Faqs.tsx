@@ -71,7 +71,7 @@ export default function FAQs() {
               className="border border-button rounded-xl shadow-sm overflow-hidden"
             >
               <button
-                className="w-full flex justify-between items-center px-6 py-4 text-left text-text font-semibold cursor-pointer focus:outline-none"
+                className="w-full flex justify-between items-center px-3 md:px-6 py-4 text-left text-text font-semibold cursor-pointer focus:outline-none"
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{faq.question}</span>
@@ -82,7 +82,7 @@ export default function FAQs() {
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4 text-text">{faq.answer}</div>
+                <div className="px-3 md:px-6 pb-4 text-text">{faq.answer}</div>
               )}
             </div>
           ))}
