@@ -70,16 +70,16 @@ export default function OurProcess() {
       </div>
       <div className="relative max-w-5xl mx-auto">
         {steps.map(({ title, description, Icon }, index) => (
-          <div key={index} className="relative flex items-start mb-10">
+          <div key={index} className="relative flex items-start mb-5 lg:mb-8">
             <div className="flex-shrink-0 w-14 h-14 bg-button rounded-full flex items-center justify-center shadow-lg">
               <Icon className="text-3xl text-secondary-text" />
             </div>
-            <div className="ml-6">
+            <div className="px-3 lg:pl-6">
               <h3 className="text-xl font-semibold text-heading">{title}</h3>
-              <p className="text-gray mt-2 max-w-2xl">{description}</p>
+              <p className="text-text max-w-3xl pt-3">{description}</p>
             </div>
             {index !== steps.length - 1 && (
-              <div className="absolute left-7 top-16 w-1 h-14 bg-[#3E29D8]"></div>
+              <div className="absolute left-7 top-16 w-1 h-14 bg-button"></div>
             )}
           </div>
         ))}
