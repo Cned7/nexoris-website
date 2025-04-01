@@ -76,7 +76,7 @@ export default function OurProcess() {
             </div>
             <div className="px-3 lg:pl-6">
               <h3 className="text-xl font-semibold text-heading">{title}</h3>
-              <p className="text-text max-w-3xl pt-3">{description}</p>
+              <p className="text-text w-full lg:w-2xl pt-3">{description}</p>
             </div>
             {index !== steps.length - 1 && (
               <div className="absolute left-7 top-16 w-1 h-14 bg-button"></div>

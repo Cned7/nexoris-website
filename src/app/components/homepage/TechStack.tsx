@@ -46,36 +46,41 @@ export default function TechStack() {
       {/* Tech Stack Swiper */}
       <div className="bg-heading rounded-lg flex justify-center px-3 items-center relative w-full h-[180px]">
 
-        {/* Swiper Logos - Positioned Above Neon Effect */}
-      
-          <Swiper
-            slidesPerView={'auto'}
-            spaceBetween={20}
-            loop={true}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
-            modules={[Autoplay]}
-            className="w-full"
-          >
-            {techStack.map(({ name, logo }, index) => (
-              <SwiperSlide
-                key={index}
-                className="flex justify-center bg-inherit"
-              >
-                <div className="flex flex-col items-center text-center p-4">
-                  <Image
-                    src={logo}
-                    alt={name}
-                    width={50}
-                    height={50}
-                    className="w-12 h-12"
-                  />
-                  <span className="text-sm md:text-lg font-medium text-secondary-text mt-2">
-                    {name}
-                  </span>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        {/* Swiper Logos */}
+      <Swiper
+  slidesPerView={3} // Default to 3 for mobile
+  spaceBetween={20}
+  loop={true}
+  autoplay={{ delay: 2000, disableOnInteraction: false }}
+  modules={[Autoplay]}
+  breakpoints={{
+    640: {
+      slidesPerView: 3, // 3 icons on mobile
+    },
+    1024: {
+      slidesPerView: 5, // 5 icons on desktop
+    },
+  }}
+  className="w-full"
+>
+  {techStack.map(({ name, logo }, index) => (
+    <SwiperSlide key={index} className="flex justify-center bg-inherit">
+      <div className="flex flex-col items-center text-center p-4">
+        <Image
+          src={logo}
+          alt={name}
+          width={50}
+          height={50}
+          className="w-12 h-12"
+        />
+        <span className="text-sm md:text-lg font-medium text-secondary-text mt-2">
+          {name}
+        </span>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
         
       </div>
 

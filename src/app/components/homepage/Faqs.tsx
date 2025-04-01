@@ -40,7 +40,7 @@ export default function FAQs() {
   }
 
   return (
-    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-6">
+    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-3 md:px-6">
       <Head>
         <script
           type="application/ld+json"
@@ -82,7 +82,7 @@ export default function FAQs() {
                 />
               </button>
               {openIndex === index && (
-                <div className="px-3 md:px-6 pb-4 text-text">{faq.answer}</div>
+                <div className="px-2 md:px-6 pb-4 text-text">{faq.answer}</div>
               )}
             </div>
           ))}
