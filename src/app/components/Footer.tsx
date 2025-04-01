@@ -17,9 +17,9 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
     <footer
-      className={twMerge('text-secondary-text pt-5 pb-5 fixed bottom-0 mt-15 bg-heading', className)}
+      className={twMerge('text-secondary-text pt-5 pb-5 fixed bottom-0  bg-heading md:px-6 lg:px-12 mt-6  xl:px-21', className)}
     >
-      <div className="container px-6 mx-auto md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
+      <div className="container px-6 mx-auto grid mt-15 lg:mt-12 grid-cols-1 md:grid-cols-3 gap-4 xl:gap-10 xl:justify-between text-center md:text-left w-ful">
         {/* Company Info */}
         <div className='w-full mx-auto container md:-ml-6'>
           <Link
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
         {/* Our Services */}
         <div className='my-4 md:my-0'>
-          <h3 className="font-bold lg:text-xl">
+          <h3 className="font-bold lg:text-xl mb-3">
             Our Services
           </h3>
           <div className="grid grid-cols-1 gap-y-2">
