@@ -50,7 +50,7 @@ const WhyNexoris: FC = () => {
         <div className="lg:w-2/5 flex justify-center relative">
           <div className="hidden md:block absolute -z-10 w-80 h-80 bg-gradient-to-l md:bg-gradient-to-r rounded-full opacity-20 blur-2xl" />
           <Image
-            src="/images/why-us.webp"
+            src="/images/e-commerce.webp"
             alt="Why Choose Nexoris"
             width={600}
             height={600}
