@@ -5,3 +5,19 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/:path*', // Apply the header to all routes
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow', // Modify this value as needed
+          },
+        ],
+      },
+    ];
+  },
+};

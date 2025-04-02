@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FaChevronUp } from 'react-icons/fa'
+import { FaChevronDown } from 'react-icons/fa'
 import Head from 'next/head'
 
 const faqs = [
@@ -75,7 +75,7 @@ export default function FAQs() {
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{faq.question}</span>
-                <FaChevronUp
+                <FaChevronDown
                   className={`w-5 h-5 transition-transform transform ${
                     openIndex === index ? 'rotate-180 text-purple' : 'text-button'
                   } cursor-pointer`}

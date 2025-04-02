@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
             NEXORIS
           </Link>
           <p className="mt-4 md:max-w-48 lg:w-full text-[14px]">
-            Delivering innovative technology solutions to help businesses succed
+            Delivering innovative technology solutions to help businesses succeed
           </p>
           <ul className="mt-4 space-y-2 text-base text-secondary-text mb-3 md:mb-0">
             <li>
@@ -78,10 +78,10 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           <span>
             <h3 className="font-bold mb-3 lg:text-xl">Contact Us</h3>
             <p className="text-[14px] md:w-48 lg:full">
-             No. 5, Mojisola Dokpesi Street, Allied Garden Estate, Badore, Ajah,
+             Allied Garden Estate, Badore, Ajah,
              Lagos, Nigeria
             </p>
-            <p>Tel: +234 (0) 9023433016</p>
+            <p>Tel: +234 (0) 9023433000</p>
             <p>Email: nexoristech@gmail.com</p>
             </span>
           {/* Social Media */}

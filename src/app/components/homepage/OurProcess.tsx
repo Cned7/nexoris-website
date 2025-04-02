@@ -20,7 +20,7 @@ const steps = [
   {
     title: 'Strategy & Planning — Building a Custom Roadmap',
     description:
-      'With a data-driven execution plan, we map out a clear, step-by-step roadmap for efficiency and scalability. This include defining the scope, timelines, and resources required to ensure a seamless execution. Finally, we align the best technologies with your strategic goals for maximum impact.',
+      'With a data-driven execution plan, we map out a clear, step-by-step roadmap for efficiency and scalability. This includes defining the scope, timelines, and resources required to ensure seamless execution. Finally, we align the best technologies with your strategic goals to maximize impact.',
     Icon: FaLightbulb,
   },
   {
@@ -38,7 +38,7 @@ const steps = [
   {
     title: 'Testing, Optimization & Quality Assurance',
     description:
-      'We conduct comprehensive performance & security testing, identifying vulnerabilities and optimizing for reliability. SEO, UX & conversion rate optimization are also performed to ensures your digital assets drive engagement, traffic, and conversions.',
+      'We conduct comprehensive performance & security testing, identifying vulnerabilities and optimizing for reliability. SEO, UX & conversion rate optimization are also performed to ensure your digital assets drive engagement, traffic, and conversions.',
     Icon: FaCheckCircle,
   },
   {
@@ -70,8 +70,8 @@ export default function OurProcess() {
       </div>
       <div className="relative max-w-5xl mx-auto">
         {steps.map(({ title, description, Icon }, index) => (
-          <div key={index} className="relative flex items-start mb-5 lg:mb-8">
-            <div className="flex-shrink-0 w-14 h-14 bg-button rounded-full flex items-center justify-center shadow-lg">
+          <div key={index} className="relative flex items-start mb-5 lg:mb-8 -mx-3 md:mx-0">
+            <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-button rounded-full flex items-center justify-center shadow-lg">
               <Icon className="text-3xl text-secondary-text" />
             </div>
             <div className="px-3 lg:pl-6">
@@ -79,7 +79,7 @@ export default function OurProcess() {
               <p className="text-text w-full lg:w-2xl pt-3">{description}</p>
             </div>
             {index !== steps.length - 1 && (
-              <div className="absolute left-7 top-16 w-1 h-14 bg-button"></div>
+              <div className="absolute left-5 md:left-7 top-16 w-1 h-14 bg-button"></div>
             )}
           </div>
         ))}

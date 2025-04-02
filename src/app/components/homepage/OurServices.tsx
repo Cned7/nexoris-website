@@ -39,8 +39,8 @@ export default function OurServices() {
     <section className="mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-bold mb-4 text-heading">Our Services</h2>
-        <p className="text-text max-w-2xl mx-auto mb-8">
-          Empowering Progress. Enabling Possibilities. Discover how Nexoris
+        <p className="text-text max-w-2xl mx-auto mb-5">
+          Discover how Nexoris
           helps businesses grow, innovate, and lead their industries.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 py-4">
