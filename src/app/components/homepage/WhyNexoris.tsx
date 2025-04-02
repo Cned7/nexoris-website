@@ -12,14 +12,14 @@ const WhyNexoris: FC = () => {
         <div className="w-fit md:w-3/5 h-full bg-gradient-to-l from-transparent to-purple rounded-l-full" />
       </div>
 
-      <h2 className="text-3xl text-center md:text-left mb-5 md:text-4xl lg:text-4xl font-bold text-heading leading-tight">
+      <h2 className="text-3xl text-center md:text-left mb-5 md:text-4xl lg:text-4xl font-bold text-heading leading-tight font-heading">
         Why Nexoris?
       </h2>
 
       <div className="relative container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
         {/* Left: Content */}
         <div className="lg:w-3/5 text-center md:text-left">
-          <p className="md:mt-6 text-base text-text max-w-2xl">
+          <p className="md:mt-6 text-base text-text max-w-2xl font-body">
             Your choice of a tech partner shapes your future. At Nexoris, we
             make your success our mission — transforming ideas into tailored
             solutions, leveraging cutting-edge technology, and keeping you ahead
@@ -27,11 +27,11 @@ const WhyNexoris: FC = () => {
             solutions — you gain a competitive advantage.
           </p>
 
-          <blockquote className="mt-6 text-base italic border-l-4 border-button pl-4 text-text">
+          <blockquote className="mt-6 text-base italic border-l-4 border-button pl-4 text-text font-body">
             “We create innovative, tailored solutions that give you a strategic
             edge — empowering you to lead, adapt, and thrive in a rapidly
             evolving digital landscape.”
-            <span className="block mt-2 text-heading font-semibold">
+            <span className="block mt-2 text-heading font-semibold font-body">
               — Founder & CEO, Nexoris Technologies Ltd.
             </span>
           </blockquote>
@@ -39,7 +39,7 @@ const WhyNexoris: FC = () => {
           <div className="mt-8">
             <Link
               href="/about"
-              className="px-6 py-3 bg-button text-secondary-text font-semibold rounded-lg shadow-md hover:bg-hover hover:bg-opacity-90 transition cursor-pointer "
+              className="px-6 py-3 bg-button text-secondary-text font-normal font-body rounded-lg shadow-md hover:bg-hover hover:bg-opacity-90 transition cursor-pointer "
             >
               Learn About Us
             </Link>

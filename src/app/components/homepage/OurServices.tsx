@@ -38,8 +38,8 @@ export default function OurServices() {
   return (
     <section className="mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-heading">Our Services</h2>
-        <p className="text-text max-w-2xl mx-auto mb-5">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 text-heading font-heading">Our Services</h2>
+        <p className="text-text max-w-2xl mx-auto mb-5 font-body text-base">
           Discover how Nexoris
           helps businesses grow, innovate, and lead their industries.
         </p>
@@ -55,11 +55,11 @@ export default function OurServices() {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-text">{title}</h3>
-              <p className="text-text mt-3">{description}</p>
+              <h3 className="text-xl font-semibold mb-2 font-heading text-heading">{title}</h3>
+              <p className="text-text font-body font-base mt-3">{description}</p>
               <div className="mt-6 text-center">
                 <Link href={link}>
-                  <span className="inline-block bg-hover text-secondary-text px-5 py-2 rounded-lg font-semibold text-sm hover:bg-heading transition duration-300">
+                  <span className="inline-block bg-hover text-secondary-text px-4 py-2 rounded-lg font-normal text-sm hover:bg-heading transition duration-300 font-heading">
                     Learn More
                   </span>
                 </Link>

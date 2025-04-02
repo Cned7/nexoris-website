@@ -41,10 +41,10 @@ const IndustriesSection: React.FC = () => {
   return (
     <section className="bg-background mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-semibold text-heading mb-6">
+        <h2 className="text-2xl md:text-4xl font-semibold text-heading mb-6 font-heading">
           The Industries We Serve
         </h2>
-        <p className="text-text mb-12 text-lg max-w-3xl mx-auto">
+        <p className="text-text mb-12 text-lg max-w-3xl mx-auto font-base">
           We collaborate with visionary businesses across diverse industries,
           delivering tailored solutions that drive real-world impact.
         </p>
@@ -53,7 +53,7 @@ const IndustriesSection: React.FC = () => {
         {industries.map((industry, index) => (
           <div
             key={index}
-            className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300"
+            className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300 font-body font-base"
           >
             {/* Next.js Optimized Image */}
             <div className="relative w-full h-35">
@@ -67,8 +67,8 @@ const IndustriesSection: React.FC = () => {
             </div>
             {/* Industry Content */}
             <div className="mt-4">
-              <h3 className="text-xl font-semibold mb-3">{industry.title}</h3>
-              <p className="text-gray">{industry.description}</p>
+              <h3 className="text-lg font-semibold mb-3 font-heading text-heading">{industry.title}</h3>
+              <p className="text-body font-body">{industry.description}</p>
             </div>
           </div>
         ))}

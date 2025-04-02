@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',  // Includes all pages
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}', // Includes all components
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',     // Includes app-specific files (if you're using the `app` directory)
   ],
   theme: {
     extend: {
@@ -20,10 +20,9 @@ module.exports = {
           text: '#F9F8FD',
         },
       },
-
       fontFamily: {
-        heading: ['var(--font-heading)', 'Inter'],
-        body: ['var(--font-body)', 'Inter'],
+        heading: ['var(--font-heading)', 'Inter'],  
+        body: ['var(--font-body)', 'Open Sans'],   
       },
     },
   },

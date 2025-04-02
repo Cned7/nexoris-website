@@ -34,10 +34,10 @@ export default function TechStack() {
     <section className="relative mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21 overflow-hidden xl-mt-5 py-6">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-heading">
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 text-heading font-heading">
           Our Technology Stack
         </h2>
-        <p className="text-text max-w-2xl mx-auto mb-10">
+        <p className="text-text max-w-2xl mx-auto mb-10 font-body">
           We use cutting-edge technology to drive innovation. Our diverse
           expertise ensures we select the right tools for your project.
         </p>
@@ -73,7 +73,7 @@ export default function TechStack() {
           height={50}
           className="w-12 h-12"
         />
-        <span className="text-sm md:text-lg font-medium text-secondary-text mt-2">
+        <span className="text-sm md:text-lg font-heading font-medium text-secondary-text mt-2">
           {name}
         </span>
       </div>
@@ -86,17 +86,17 @@ export default function TechStack() {
 
       {/* Call to Action Section */}
       <div className="text-center mt-12">
-        <h3 className="text-2xl md:text-3xl font-bold text-heading mb-4">
+        <h3 className="text-2xl md:text-3xl font-bold text-heading font-heading mb-4">
           Let’s Build Something Extraordinary
         </h3>
-        <p className="text-text max-w-xl mx-auto mb-10">
+        <p className="text-text font-body max-w-xl mx-auto mb-10">
           Your vision. Our expertise. Together, we’ll drive innovation and
           achieve transformative success. Partner with Nexoris to bring your
           ideas to life and unlock new opportunities.
         </p>
         <Link
           href="/contact"
-          className="bg-button text-secondary-text px-6 py-3 rounded-lg text-lg font-semibold hover:bg-hover transition duration-300"
+          className="bg-button text-secondary-text px-6 py-3 rounded-lg text-normal hover:bg-hover transition duration-300 font-heading"
           aria-label="Get started with Nexoris"
         >
           Get Started

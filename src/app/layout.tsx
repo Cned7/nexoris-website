@@ -1,5 +1,5 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Roboto } from 'next/font/google';
 import type { Metadata } from 'next';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,10 +10,10 @@ const heading = Inter({
   weight: ['400', '700'],
 });
 
-const body = Inter({
+const body = Roboto({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['300', '400', '600', '700'],
+  weight: ['300', '400', '700'],
 });
 
 // Default metadata

@@ -37,8 +37,8 @@ export default function BlogSection() {
   return (
     <section className="relative bg-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 py-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-heading">Latest Insights</h2>
-        <p className="mt-4 text-lg text-text">
+        <h2 className="text-4xl font-bold text-heading font-heading">Latest Insights</h2>
+        <p className="mt-4 text-lg text-text font-body">
           Stay ahead with expert insights, trends, and strategies.
         </p>
       </div>
@@ -58,10 +58,10 @@ export default function BlogSection() {
               className="w-full md:h-72 lg:h-35 object-cover rounded-lg"
             />
             <div className="pt-5">
-              <h3 className="text-base font-semibold text-text transition">
+              <h3 className="text-base font-semibold text-heading transition font-heading">
                 {post.title}
               </h3>
-              <p className="mt-2 text-text font-base">{post.description}</p>
+              <p className="mt-2 text-text font-body font-base">{post.description}</p>
               <span className="mt-4 inline-block text-secondary-text bg-hover font-medium py-1 rounded-lg px-4 hover:bg-heading">
                 Read More
               </span>
@@ -73,7 +73,7 @@ export default function BlogSection() {
       <div className="mt-12 text-center">
         <Link
           href="/blog"
-          className="inline-block bg-heading text-secondary-text px-6 py-2 rounded-lg text-lg font-medium hover:bg-hover transition"
+          className="inline-block bg-heading text-secondary-text px-6 py-2 rounded-lg text-lg font-medium hover:bg-hover transition font-body"
         >
           View All Articles
         </Link>
