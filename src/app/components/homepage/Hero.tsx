@@ -6,7 +6,7 @@ export default function HomeHero() {
       <div className="flex justify-between flex-col-reverse md:flex-row gap-8 p-4 lg:p-8">
         {/* Left: Text Content */}
         <div className="flex flex-col md:w-1/2 lg:mt-10 w-full">
-          <h1 className="text-[28px] lg:text-4xl text-heading font-bold tracking-normal">
+          <h1 className=" text-3xl lg:text-4xl text-heading font-bold tracking-normal">
             Innovative Technology Solutions
           </h1>
           <article className="text-base font-body text-text mt-5 lg:mt-8">
