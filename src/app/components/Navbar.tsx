@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-4 text-heading font-normal text-base font-heading xl:ml-30">
-          <Link href="/about" className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-cyan rounded-lg px-4 py-2">
+          <Link href="/about-us" className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-cyan rounded-lg px-4 py-2">
             About Us
           </Link>
 
@@ -91,9 +91,9 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Discuss a Project (Desktop Only) */}
-        <button className="hidden lg:block cursor-pointer text-secondary-text rounded-lg px-4 py-2 hover:bg-hover bg-button font-normal text-base font-body">
+        <Link href="/contact-us" className="hidden lg:block cursor-pointer text-secondary-text rounded-lg px-4 py-2 hover:bg-hover bg-button font-normal text-base font-body">
           Discuss a Project
-        </button>
+        </Link>
 
         {/* Mobile Menu Toggle */}
         <button className="lg:hidden text-heading" onClick={() => {
@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="bg-background px-3 w-full z-20 absolute top-14 rounded mx-auto">
           <nav className="flex flex-col text-heading w-[95%] container">
-            <Link href="/about" className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 font-normal text-base text-heading font-heading">
+            <Link href="/about-us" className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 font-normal text-base text-heading font-heading">
               About Us
             </Link>
 

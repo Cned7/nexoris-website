@@ -33,12 +33,12 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </p>
           <ul className="mt-4 space-y-2 text-base text-secondary-text mb-3 md:mb-0">
             <li>
-              <Link href="/about" className=" hover:text-hover transition font-body">
+              <Link href="/about-us" className=" hover:text-hover transition font-body">
                 About Us
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-hover transition font-body">
+              <Link href="/contact-us" className="hover:text-hover transition font-body">
                 Contact Us
               </Link>
             </li>
@@ -144,8 +144,8 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           </Link>
         </li>
         <li>
-          <Link href="/terms" className="hover:text-hover transition font-body">
-            Terms & Conditions
+          <Link href="/cookies-policy" className="hover:text-hover transition font-body">
+            Cookies Policy
           </Link>
         </li>
       </div>

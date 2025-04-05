@@ -38,7 +38,7 @@ const WhyNexoris: FC = () => {
 
           <div className="mt-8">
             <Link
-              href="/about"
+              href="/about-us"
               className="px-6 py-3 bg-button text-secondary-text font-normal font-body rounded-lg shadow-md hover:bg-hover hover:bg-opacity-90 transition cursor-pointer "
             >
               Learn About Us

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeHero() {
   return (
@@ -10,18 +11,18 @@ export default function HomeHero() {
             Innovative Technology Solutions
           </h1>
           <article className="text-base font-body text-text mt-5 lg:mt-8">
-            <p>
+            <p className="mb-8 lg:mb-12">
               We provide cutting-edge solutions that help businesses succeed.
               From custom software and scalable cloud platforms to data-driven
               marketing strategies, we’re your partner in turning challenges
               into opportunities.
             </p>
-            <button
-              className="bg-button text-secondary-text cursor-pointer font-heading text-lg rounded-lg  border-0 w-full lg:max-w-[280px] py-3 
-           mt-8 lg:mt-10 hover:bg-hover"
+            <Link href="/contact-us"
+              className="bg-button text-secondary-text cursor-pointer font-heading text-lg rounded-lg  border-0 w-full lg:max-w-[280px] p-3 
+           hover:bg-hover"
             >
               Let&#39;s Build Together
-            </button>
+            </Link>
           </article>
         </div>
 

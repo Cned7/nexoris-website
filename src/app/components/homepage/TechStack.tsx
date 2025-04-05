@@ -95,7 +95,7 @@ export default function TechStack() {
           ideas to life and unlock new opportunities.
         </p>
         <Link
-          href="/contact"
+          href="/contact-us"
           className="bg-button text-secondary-text px-6 py-3 rounded-lg text-normal hover:bg-hover transition duration-300 font-heading"
           aria-label="Get started with Nexoris"
         >
