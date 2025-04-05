@@ -80,7 +80,7 @@ export default function ContactPage() {
       </p>
 
       {/* Contact Details */}
-        <div className="space-y-4 text-body my-12">
+        <div className="space-y-4 text-body my-12 container mx-auto w-full">
           <div className="text-body text-lg">
             <h2 className="text-3xl font-semibold font-heading text-heading mb-8">Get in Touch</h2>
             <p>Email: <a href="mailto:hello@nexoristech.com" className="text-blue-600">hello@nexoristech.com</a></p>
