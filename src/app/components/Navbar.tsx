@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
           <Link href="/insight" className="hover:text-secondary-text border border-transparent hover:border-button hover:bg-button rounded-lg px-4 py-2 font-heading">
             Insight
           </Link>
-          <Link href="/contact" className="text-heading hover:text-secondary-text border border-transparent hover:border-button hover:bg-button rounded-lg px-4 py-2">
+          <Link href="/contact-us" className="text-heading hover:text-secondary-text border border-transparent hover:border-button hover:bg-button rounded-lg px-4 py-2">
             Contact Us
           </Link>
         </div>
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
             <Link href="/insight" className="hover:text-secondary-text hover:bg-button px-3 text-heading font-normal text-base font-heading">
               Insight
             </Link>
-            <Link href="/contact" className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 text-text font-normal text-base text-heading font-heading">
+            <Link href="/contact-us" className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 text-text font-normal text-base text-heading font-heading">
               Contact Us
             </Link>
 
