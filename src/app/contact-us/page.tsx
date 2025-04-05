@@ -79,6 +79,16 @@ export default function ContactPage() {
         let&apos;s talk. Reach out to us and let&apos;s explore how we can bring your vision to life.
       </p>
 
+      {/* Contact Details */}
+        <div className="space-y-4 text-body my-12">
+          <div className="text-body text-lg">
+            <h2 className="text-3xl font-semibold font-heading text-heading mb-8">Get in Touch</h2>
+            <p>Email: <a href="mailto:hello@nexoristech.com" className="text-blue-600">hello@nexoristech.com</a></p>
+            <p>Phone: <a href="tel:+234XXXXXXXXXX" className="text-blue-600">+234 XXX XXX XXXX</a></p>
+            <p>Office Hours: Monday – Friday, 9:00 AM – 5:00 PM (WAT)</p>
+            <p>Location: Lagos, Nigeria (Remote-first, serving clients globally)</p>
+          </div>
+        </div>
       <div>
         {/* Contact Form */}
         <form
