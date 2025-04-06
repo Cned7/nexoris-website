@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
 import TechHero from '../components/tech-development/TechHero'
 import TechServiceCards from '../components/tech-development/ServiceCards'
