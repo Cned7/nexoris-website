@@ -1,21 +1,20 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function HomeHero() {
+export default function TechHero() {
   return (
-    <section className="bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-26 lg:mt-32 xl:mx-28">
-      <div className="flex justify-between flex-col-reverse md:flex-row gap-8 p-4 lg:p-8">
+    <section className="bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-8">
+      <div className="flex justify-between flex-col-reverse md:flex-row gap-8 px-4 py-8 lg:p-8">
         {/* Left: Text Content */}
-        <div className="flex flex-col md:w-1/2 lg:mt-10 w-full">
-          <h1 className=" text-3xl lg:text-4xl text-heading font-bold tracking-normal">
-            Innovative Technology Solutions
+        <div className="flex flex-col md:w-1/2 lg:mt-10 w-full text-center">
+          <h1 className=" text-3xl lg:text-4xl xl:text-5xl text-heading font-semibold font-heading tracking-normal">
+            Custom-Built Software That Powers Growth
           </h1>
-          <article className="text-base font-body text-text mt-5 lg:mt-8">
+          <article className="text-lg font-body text-text mt-5 lg:mt-8">
             <p className="mb-8 lg:mb-12">
-              We provide cutting-edge solutions that help businesses succeed.
-              From custom software and scalable cloud platforms to data-driven
-              marketing strategies, we’re your partner in turning challenges
-              into opportunities.
+              From web apps to mobile apps and cloud infrastructure, Nexoris
+              engineers tailored digital products that solve real business
+              challenges.
             </p>
             <Link
               href="/contact-us"
@@ -31,7 +30,7 @@ export default function HomeHero() {
 
         <div className="relative flex md:w-1/2 justify-center lg:justify-end">
           <Image
-            src="/images/nexoris-hero.webp"
+            src="/images/hero-technology-development.webp"
             alt="Hero Section Image"
             height={400}
             width={500}
