@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function TechHero() {
   return (
-    <section className="bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-8">
+    <section className="bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-7">
       <div className="flex justify-between flex-col-reverse md:flex-row gap-8 px-4 py-8 lg:p-8">
         {/* Left: Text Content */}
         <div className="flex flex-col md:w-1/2 lg:mt-10 w-full text-center">
