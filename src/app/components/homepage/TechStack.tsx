@@ -31,7 +31,7 @@ const techStack = [
 
 export default function TechStack() {
   return (
-    <section className="relative mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21 overflow-hidden xl-mt-5 py-6">
+    <section className="relative mt-10 lg:mt-15 overflow-hidden xl-mt-5 py-6">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-bold mb-6 text-heading font-heading">
@@ -45,43 +45,44 @@ export default function TechStack() {
 
       {/* Tech Stack Swiper */}
       <div className="bg-heading rounded-lg flex justify-center px-3 items-center relative w-full h-[180px]">
-
         {/* Swiper Logos */}
-      <Swiper
-  slidesPerView={3} // Default to 3 for mobile
-  spaceBetween={20}
-  loop={true}
-  autoplay={{ delay: 2000, disableOnInteraction: false }}
-  modules={[Autoplay]}
-  breakpoints={{
-    640: {
-      slidesPerView: 3, // 3 icons on mobile
-    },
-    1024: {
-      slidesPerView: 5, // 5 icons on desktop
-    },
-  }}
-  className="w-full"
->
-  {techStack.map(({ name, logo }, index) => (
-    <SwiperSlide key={index} className="flex justify-center bg-inherit">
-      <div className="flex flex-col items-center text-center p-4">
-        <Image
-          src={logo}
-          alt={name}
-          width={50}
-          height={50}
-          className="w-12 h-12"
-        />
-        <span className="text-sm md:text-lg font-heading font-medium text-secondary-text mt-2">
-          {name}
-        </span>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+        <Swiper
+          slidesPerView={3} // Default to 3 for mobile
+          spaceBetween={20}
+          loop={true}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          modules={[Autoplay]}
+          breakpoints={{
+            640: {
+              slidesPerView: 3, // 3 icons on mobile
+            },
+            1024: {
+              slidesPerView: 5, // 5 icons on desktop
+            },
 
-        
+            1280: {
+              slidesPerView: 6,
+            },
+          }}
+          className="w-full"
+        >
+          {techStack.map(({ name, logo }, index) => (
+            <SwiperSlide key={index} className="flex justify-center bg-inherit">
+              <div className="flex flex-col items-center text-center p-4">
+                <Image
+                  src={logo}
+                  alt={name}
+                  width={50}
+                  height={50}
+                  className="w-12 h-12"
+                />
+                <span className="text-sm md:text-lg font-heading font-medium text-secondary-text mt-2">
+                  {name}
+                </span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       {/* Call to Action Section */}
@@ -89,14 +90,14 @@ export default function TechStack() {
         <h3 className="text-2xl md:text-3xl font-bold text-heading font-heading mb-4">
           Let’s Build Something Extraordinary
         </h3>
-        <p className="text-text font-body max-w-xl mx-auto mb-10">
+        <p className="text-text font-body text-lg max-w-xl mx-auto mb-10">
           Your vision. Our expertise. Together, we’ll drive innovation and
           achieve transformative success. Partner with Nexoris to bring your
           ideas to life and unlock new opportunities.
         </p>
         <Link
           href="/contact-us"
-          className="bg-button text-secondary-text px-6 py-3 rounded-lg text-normal hover:bg-hover transition duration-300 font-heading"
+          className="bg-button text-secondary-text px-6 py-3 text-lg rounded-lg text-normal hover:bg-hover transition duration-300 font-heading"
           aria-label="Get started with Nexoris"
         >
           Get Started

@@ -3,10 +3,21 @@
 import Image from 'next/image'
 import React from 'react'
 import TechStack from '../components/homepage/TechStack'
+import Breadcrumbs from '../components/Breadcrumbs'
+
+const breadcrumbs = [
+  { name: 'Home', href: '/', isCurrentPage: false }, // explicitly setting isCurrentPage to false
+  {
+    name: 'About Us',
+    href: '/about-us',
+    isCurrentPage: true,
+  }, // this is the current page
+]
 
 const AboutUsPage: React.FC = () => {
   return (
-    <main className="mx-4 md:mx-6 lg:mx-12 mt-26 lg:mt-32 xl:mx-28">
+    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-28">
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       {/* Hero Section */}
       <section className="px-4 py-5 sm:px-6 lg:px-20 bg-secondary-background">
         <h1 className="text-4xl sm:text-4xl font-bold my-8 text-center sm:text-left text-heading font-heading">

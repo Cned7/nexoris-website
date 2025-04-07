@@ -40,7 +40,7 @@ export default function FAQs() {
   }
 
   return (
-    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-3 md:px-6">
+    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 px-3 md:px-6 py-8">
       <Head>
         <script
           type="application/ld+json"
@@ -68,21 +68,25 @@ export default function FAQs() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-button rounded-xl shadow-sm overflow-hidden"
+              className="border border-button rounded-xl shadow-sm overflow-hidden text-lg"
             >
               <button
-                className="w-full flex justify-between items-center px-3 md:px-6 py-4 text-left text-heading font-semibold cursor-pointer focus:outline-none"
+                className="w-full flex justify-between items-center px-3 md:px-6 py-4 text-left text-heading font-semibold cursor-pointer focus:outline-none text-lg"
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{faq.question}</span>
                 <FaChevronDown
                   className={`w-5 h-5 transition-transform transform ${
-                    openIndex === index ? 'rotate-180 text-purple' : 'text-button'
+                    openIndex === index
+                      ? 'rotate-180 text-purple'
+                      : 'text-button'
                   } cursor-pointer`}
                 />
               </button>
               {openIndex === index && (
-                <div className="px-2 md:px-6 pb-4 text-text font-body">{faq.answer}</div>
+                <div className="px-2 md:px-6 pb-4 text-text font-body">
+                  {faq.answer}
+                </div>
               )}
             </div>
           ))}

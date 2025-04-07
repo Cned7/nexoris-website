@@ -57,7 +57,7 @@ const steps = [
 
 export default function OurProcess() {
   return (
-    <section className="relative bg-background border border-button rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-6">
+    <section className="relative bg-secondary-background rounded-lg mt-6 lg:mt-12 overflow-hidden xl-mt-5 p-6">
       <div className="w-full mx-auto text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-heading font-heading py-5">
           Our Step-by-Step Process: From Vision to Success
@@ -70,13 +70,20 @@ export default function OurProcess() {
       </div>
       <div className="relative max-w-5xl mx-auto">
         {steps.map(({ title, description, Icon }, index) => (
-          <div key={index} className="relative flex items-start mb-5 lg:mb-8 -mx-3 md:mx-0">
+          <div
+            key={index}
+            className="relative flex items-start mb-5 lg:mb-8 -mx-3 md:mx-0"
+          >
             <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-button rounded-full flex items-center justify-center shadow-lg">
               <Icon className="text-3xl text-secondary-text" />
             </div>
             <div className="px-3 lg:pl-6">
-              <h3 className="text-xl font-semibold text-heading font-heading">{title}</h3>
-              <p className="text-text w-full lg:w-2xl pt-3 font-body">{description}</p>
+              <h3 className="text-xl font-semibold text-heading font-heading">
+                {title}
+              </h3>
+              <p className="text-text w-full lg:w-2xl pt-3 font-body">
+                {description}
+              </p>
             </div>
             {index !== steps.length - 1 && (
               <div className="absolute left-5 md:left-7 top-16 w-1 h-14 bg-button"></div>

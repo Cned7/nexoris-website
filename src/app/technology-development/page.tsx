@@ -4,12 +4,22 @@ import { Metadata } from 'next'
 import TechHero from '../components/tech-development/TechHero'
 import TechServiceCards from '../components/tech-development/ServiceCards'
 import TechServices from '../components/tech-development/TechServices'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Custom Software, Mobile Apps & Cloud | Nexoris',
   description:
     'Nexoris designs and builds custom software, mobile apps, APIs, and cloud infrastructure that drive growth. Partner with us to deliver real results.',
 }
+
+const breadcrumbs = [
+  { name: 'Home', href: '/', isCurrentPage: false }, // explicitly setting isCurrentPage to false
+  {
+    name: 'Technology Development',
+    href: '/technology-development',
+    isCurrentPage: true,
+  }, // this is the current page
+]
 
 export default function ServicesPage() {
   return (
@@ -38,7 +48,9 @@ export default function ServicesPage() {
           }}
         />
       </Head>
-      <main className='className="relative bg-background overflow-hidden mt-18 lg:mt-16 xl:mx-20'>
+
+      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
         <TechHero />
         <TechServiceCards />
         <TechServices />

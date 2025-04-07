@@ -3,14 +3,14 @@ import Link from 'next/link'
 
 export default function HomeHero() {
   return (
-    <section className="bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-26 lg:mt-32 xl:mx-28">
+    <section className="bg-secondary-background rounded-lg">
       <div className="flex justify-between flex-col-reverse md:flex-row gap-8 p-4 lg:p-8">
         {/* Left: Text Content */}
         <div className="flex flex-col md:w-1/2 lg:mt-10 w-full">
           <h1 className=" text-3xl lg:text-4xl text-heading font-bold tracking-normal">
             Innovative Technology Solutions
           </h1>
-          <article className="text-base font-body text-text mt-5 lg:mt-8">
+          <article className="text-lg font-body text-text mt-5 lg:mt-8">
             <p className="mb-8 lg:mb-12">
               We provide cutting-edge solutions that help businesses succeed.
               From custom software and scalable cloud platforms to data-driven

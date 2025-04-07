@@ -118,15 +118,17 @@ const TechServices = () => {
           </div>
 
           {/* Image Section */}
-          <div className="w-full lg:w-1/2 relative h-[300px] md:h-[400px]">
+          <div className="w-full lg:w-1/2 relative">
             <div className="relative w-full h-full overflow-hidden rounded-lg">
               <Image
                 src={img}
                 alt={alt}
-                fill
+                layout="responsive"
+                width={600}
+                height={300}
                 loading="lazy"
                 className="object-cover rounded-lg"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw" // Adjust sizes for responsiveness
               />
             </div>
           </div>

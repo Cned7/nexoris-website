@@ -39,8 +39,8 @@ const industries: Industry[] = [
 
 const IndustriesSection: React.FC = () => {
   return (
-    <section className="bg-background mx-6 lg:mx-12 mt-10 lg:mt-15 xl:mx-21">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="bg-background mt-10 lg:mt-15">
+      <div className="w-full mx-auto text-center">
         <h2 className="text-2xl md:text-4xl font-semibold text-heading mb-6 font-heading">
           The Industries We Serve
         </h2>
@@ -53,7 +53,7 @@ const IndustriesSection: React.FC = () => {
         {industries.map((industry, index) => (
           <div
             key={index}
-            className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300 font-body font-base"
+            className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300 font-body text-lg"
           >
             {/* Next.js Optimized Image */}
             <div className="relative w-full h-35">
@@ -67,7 +67,9 @@ const IndustriesSection: React.FC = () => {
             </div>
             {/* Industry Content */}
             <div className="mt-4">
-              <h3 className="text-lg font-semibold mb-3 font-heading text-heading">{industry.title}</h3>
+              <h3 className="text-lg font-semibold mb-3 font-heading text-heading">
+                {industry.title}
+              </h3>
               <p className="text-body font-body">{industry.description}</p>
             </div>
           </div>

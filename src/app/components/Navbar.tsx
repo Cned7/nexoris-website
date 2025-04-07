@@ -47,10 +47,10 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex gap-4 text-heading font-normal text-base font-heading xl:ml-30">
+        <div className="hidden lg:flex gap-4 text-heading font-normal text-lg font-heading xl:ml-30">
           <Link
             href="/about-us"
-            className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-cyan rounded-lg px-4 py-2"
+            className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-hover rounded-lg px-4 py-2"
           >
             About Us
           </Link>
@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
           >
             <button
               onClick={() => setIsServicesOpen(!isServicesOpen)}
-              className="flex items-center hover:text-secondary-text border border-transparent hover:border-button hover:bg-button cursor-pointer rounded-lg px-4 py-2 text-heading font-normal text-base font-heading"
+              className="flex items-center hover:text-secondary-text border border-transparent hover:border-button hover:bg-button cursor-pointer rounded-lg px-4 py-2 text-heading font-normal font-heading"
             >
               Services
               {isServicesOpen ? (
@@ -75,14 +75,14 @@ const Navbar: React.FC = () => {
 
             {isServicesOpen && (
               <div
-                className="absolute left-1/2 transform -translate-x-1/2 bg-background text-heading shadow-lg z-50 rounded-lg flex justify-center py-4 mt-5 lg:mt-10 font-heading"
+                className="absolute left-1/2 transform -translate-x-1/2 bg-background text-heading shadow-lg z-50 rounded-lg flex justify-center py-4 lg:mt-6 font-heading"
                 style={{
                   width: navRef.current?.offsetWidth
                     ? `${navRef.current.offsetWidth * 0.6}px`
                     : '60%',
                 }}
               >
-                <div className="grid grid-cols-2 gap-x-5 lg:gap-x-10 gap-y-1 p-4 text-base content-between items-center">
+                <div className="grid grid-cols-2 gap-x-5 lg:gap-x-10 gap-y-1 p-4 text-lg content-between items-center">
                   {services.map((service, index) => (
                     <Link
                       key={index}
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
         {/* Discuss a Project (Desktop Only) */}
         <Link
           href="/contact-us"
-          className="hidden lg:block cursor-pointer text-secondary-text rounded-lg px-4 py-2 hover:bg-hover bg-button font-normal text-base font-body"
+          className="hidden lg:block cursor-pointer text-secondary-text rounded-lg px-4 py-2 hover:bg-hover bg-button font-normal text-lg font-body"
         >
           Discuss a Project
         </Link>
@@ -132,13 +132,13 @@ const Navbar: React.FC = () => {
             setIsMobileServicesOpen(false)
           }}
         >
-          {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+          {isMobileMenuOpen ? <FiX size={32} /> : <FiMenu size={32} />}
         </button>
       </div>
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="bg-background px-3 w-full z-20 absolute top-14 rounded mx-auto mt-12">
-          <nav className="flex flex-col text-heading w-[95%] container text-lg leading-relaxed">
+        <div className="bg-background px-3 w-full z-20 absolute top-14 rounded mx-auto mt-4 text-lg">
+          <nav className="flex flex-col gap-y-3 py-5 bg-secondary-background text-heading w-full container text-lg leading-relaxed">
             <Link
               href="/about-us"
               className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 font-normal text-heading font-heading"
@@ -149,13 +149,13 @@ const Navbar: React.FC = () => {
             {/* Mobile Services Dropdown */}
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="flex items-center justify-between w-full hover:bg-button rounded-lg py-1 hover:text-secondary-text cursor-pointer px-3 text-text font-normal text-xl font-heading"
+              className="flex items-center justify-between w-full hover:bg-button rounded-lg py-3 hover:text-secondary-text cursor-pointer px-3 text-text font-normal text-lg font-heading"
             >
               Services
               {isMobileServicesOpen ? (
-                <FiChevronUp size={18} />
+                <FiChevronUp size={20} />
               ) : (
-                <FiChevronDown size={18} />
+                <FiChevronDown size={20} />
               )}
             </button>
             {isMobileServicesOpen && (
@@ -164,7 +164,7 @@ const Navbar: React.FC = () => {
                   <Link
                     key={index}
                     href={service.path}
-                    className="group flex items-center gap-2 hover:bg-button hover:text-secondary-text rounded-lg text-base py-1 transition-colors duration-200 w-full px-4 text-text font-normal text-lg leading-relaxed font-heading"
+                    className="group flex items-center gap-2 py-2 hover:bg-button hover:text-secondary-text rounded-lg text-base transition-colors duration-200 w-full px-4 text-text font-normal text-lg leading-relaxed font-heading"
                     onClick={() => {
                       setIsMobileMenuOpen(false) // Close mobile menu
                       setIsMobileServicesOpen(false) // Close mobile services dropdown
@@ -181,7 +181,7 @@ const Navbar: React.FC = () => {
             )}
             <Link
               href="/insight"
-              className="hover:text-secondary-text hover:bg-button px-3 text-heading text-xl font-normal font-heading"
+              className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 text-text text-[21px] py-2 font-normal text-heading font-heading"
               onClick={() => setIsMobileMenuOpen(false)} // Close mobile menu
             >
               Insight

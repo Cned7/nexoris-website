@@ -6,7 +6,7 @@ import React, { FC } from 'react'
 
 const WhyNexoris: FC = () => {
   return (
-    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 p-6">
+    <section className="relative bg-secondary-background rounded-lg mt-6 lg:mt-12 overflow-hidden xl-mt-5 p-8">
       {/* Background Shape */}
       <div className="absolute inset-0 flex justify-end">
         <div className="w-fit md:w-3/5 h-full bg-gradient-to-l from-transparent to-purple rounded-l-full" />
@@ -19,7 +19,7 @@ const WhyNexoris: FC = () => {
       <div className="relative container mx-auto flex flex-col-reverse lg:flex-row items-center gap-12">
         {/* Left: Content */}
         <div className="lg:w-3/5 text-center md:text-left">
-          <p className="md:mt-6 text-base text-text max-w-2xl font-body">
+          <p className="md:mt-6 text-lg text-text max-w-2xl font-body">
             Your choice of a tech partner shapes your future. At Nexoris, we
             make your success our mission — transforming ideas into tailored
             solutions, leveraging cutting-edge technology, and keeping you ahead
@@ -27,7 +27,7 @@ const WhyNexoris: FC = () => {
             solutions — you gain a competitive advantage.
           </p>
 
-          <blockquote className="mt-6 text-base italic border-l-4 border-button pl-4 text-text font-body">
+          <blockquote className="mt-6 text-lg italic border-l-4 border-button pl-4 text-text font-body">
             “We create innovative, tailored solutions that give you a strategic
             edge — empowering you to lead, adapt, and thrive in a rapidly
             evolving digital landscape.”

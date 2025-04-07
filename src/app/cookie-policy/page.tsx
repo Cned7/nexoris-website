@@ -1,8 +1,19 @@
 import React from 'react'
+import Breadcrumbs from '../components/Breadcrumbs'
+
+const breadcrumbs = [
+  { name: 'Home', href: '/', isCurrentPage: false }, // explicitly setting isCurrentPage to false
+  {
+    name: 'Cookie Policy',
+    href: '/cookie-policy',
+    isCurrentPage: true,
+  }, // this is the current page
+]
 
 const CookiePolicy = () => {
   return (
-    <main className="container mx-auto px-6 md:py-8 lg:py-16 mt-24 md:mt-18">
+    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-32 xl:mx-21">
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
       <h1 className="text-3xl md:text-4xl font-bold text-heading font-heading  text-center mb-4">
         Cookie Policy
       </h1>

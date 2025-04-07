@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 export default function TechServiceCards() {
   return (
-    <section className="bg-background rounded-lg py-8 px-3 mx-4 md:mx-6 lg:mx-12 my-9 xl:mx-20 shadow">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center text-secondary-text">
+    <section className="bg-background rounded-lg py-2 px-4 sm:p-6 lg:p-12 xl:px-20 my-12 shadow shadow-gray-400">
+      <div className="w-full mx-auto grid md:grid-cols-3 gap-8 text-center text-secondary-text">
         {[
           { title: 'Custom Software', id: '#custom' },
           { title: 'Mobile Apps', id: '#mobile' },

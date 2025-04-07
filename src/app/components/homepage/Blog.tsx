@@ -35,15 +35,17 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <section className="relative bg-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 py-6">
+    <section className="relative bg-background rounded-lg mt-6 lg:mt-12 overflow-hidden xl-mt-5 py-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-heading font-heading">Latest Insights</h2>
+        <h2 className="text-4xl font-bold text-heading font-heading">
+          Latest Insights
+        </h2>
         <p className="mt-4 text-lg text-text font-body">
           Stay ahead with expert insights, trends, and strategies.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-4 gap-4 mt-12 w-full mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 w-full mx-auto">
         {blogPosts.map((post, index) => (
           <Link
             key={index}
@@ -58,11 +60,13 @@ export default function BlogSection() {
               className="w-full md:h-72 lg:h-35 object-cover rounded-lg"
             />
             <div className="pt-5">
-              <h3 className="text-base font-semibold text-heading transition font-heading">
+              <h3 className="text-lg font-bold text-heading transition font-heading">
                 {post.title}
               </h3>
-              <p className="mt-2 text-text font-body font-base">{post.description}</p>
-              <span className="mt-4 inline-block text-secondary-text bg-hover font-medium py-1 rounded-lg px-4 hover:bg-heading">
+              <p className="mt-2 text-text font-body text-lg">
+                {post.description}
+              </p>
+              <span className="mt-4 inline-block text-secondary-text bg-hover font-medium py-2 rounded-lg px-4 hover:bg-heading">
                 Read More
               </span>
             </div>
