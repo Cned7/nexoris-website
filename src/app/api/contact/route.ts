@@ -1,14 +1,10 @@
-// pages/api/contact.ts
-
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method === 'POST') {
-    const { name, email, phone, company, service, message } = req.body
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json()
+    const { name, email, phone, company, service, message } = body
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -20,7 +16,7 @@ export default async function handler(
 
     const mailOptions = {
       from: process.env.MAIL_USER,
-      to: 'your-email@example.com', // Replace with your destination email
+      to: 'your-email@example.com',
       subject: `Contact Form Submission from ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
@@ -32,14 +28,17 @@ export default async function handler(
       `,
     }
 
-    try {
-      await transporter.sendMail(mailOptions)
-      return res.status(200).json({ message: 'Email sent successfully' })
-    } catch (error) {
-      console.error('Email error:', error)
-      return res.status(500).json({ error: 'Failed to send email' })
-    }
-  } else {
-    return res.status(405).json({ error: 'Method not allowed' })
+    await transporter.sendMail(mailOptions)
+
+    return NextResponse.json(
+      { message: 'Email sent successfully' },
+      { status: 200 }
+    )
+  } catch (error) {
+    console.error('Email error:', error)
+    return NextResponse.json(
+      { error: 'Failed to submit form' },
+      { status: 500 }
+    )
   }
 }
