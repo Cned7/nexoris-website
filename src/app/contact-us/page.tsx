@@ -74,7 +74,6 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Send form data to the backend API route
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -88,7 +87,6 @@ export default function ContactPage() {
 
       if (response.ok) {
         alert('Your message has been sent successfully!')
-        // Optionally, reset the form after submission
         setFormData({
           name: '',
           email: '',
@@ -102,12 +100,13 @@ export default function ContactPage() {
         alert(`Failed to send message: ${data.error}`)
       }
     } catch (error) {
+      console.error('Submission error:', error)
       alert('An error occurred while sending the message.')
     }
   }
 
   return (
-    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <section className="max-w-4xl mx-auto px-6 md:py-8 container">
         <h1 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-4">
