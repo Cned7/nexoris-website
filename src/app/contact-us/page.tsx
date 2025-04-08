@@ -36,14 +36,14 @@ export default function ContactPage() {
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <section className="max-w-4xl mx-auto px-6 md:py-8 container">
         <h1 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-4">
-          Let’s Start Building Together
+          Let&apos;s Start Building Together
         </h1>
         <p className="text-lg text-body my-8">
           Got a bold idea, a complex challenge, or just need expert guidance on
-          your next big move? We’re here to help. Whether you're looking to
-          launch a product, modernize your tech stack, or explore innovative
-          digital strategies — let's talk. Reach out to us and let's explore how
-          we can bring your vision to life.
+          your next big move? We&apos;re here to help. Whether you&apos;re
+          looking to launch a product, modernize your tech stack, or explore
+          innovative digital strategies — let&apos;s talk. Reach out to us and
+          let&apos;s explore how we can bring your vision to life.
         </p>
 
         {/* Contact Details */}
@@ -155,7 +155,7 @@ export default function ContactPage() {
               <input type="checkbox" name="consent" required className="mt-1" />
               <span>
                 I consent to the processing of my data in accordance with
-                Nexoris Technologies’ privacy policy.
+                Nexoris Technologies&apos; privacy policy.
               </span>
             </label>
 
@@ -163,7 +163,7 @@ export default function ContactPage() {
               type="submit"
               className="bg-button hover:bg-heading cursor-pointer text-white font-semibold py-3 px-6 rounded-md transition duration-200"
             >
-              Let’s Build Together
+              Submit
             </button>
           </form>
         </div>
