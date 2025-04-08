@@ -22,7 +22,6 @@ export default function ContactPage() {
     'Analytics & Reporting',
     'Digital Transformation Consulting',
     'Corporate Training',
-    'Product Management Consulting',
     'Others',
   ]
 
@@ -30,6 +29,33 @@ export default function ContactPage() {
     { name: 'Home', href: '/', isCurrentPage: false },
     { name: 'Contact Us', href: '/contact-us', isCurrentPage: true },
   ]
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    // Type-cast event.target to HTMLFormElement
+    const form = event.target as HTMLFormElement
+
+    // Access form fields and cast them individually
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value
+    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value
+    const company = (form.elements.namedItem('company') as HTMLInputElement)
+      .value
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement)
+      .value
+
+    // Validate email format
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address')
+      return
+    }
+
+    // Proceed with form submission logic
+    // (You can log or submit the data here)
+    form.submit()
+  }
 
   return (
     <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
@@ -74,6 +100,7 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div>
           <form
+            onSubmit={handleSubmit} // Using the handleSubmit function to process form submission
             action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
             method="POST"
             className="space-y-4 bg-background rounded-lg shadow shadow-[#bfb9ef] p-4 lg:p-8"
@@ -83,7 +110,7 @@ export default function ContactPage() {
             <input
               type="hidden"
               name="_next"
-              value="https://https://nexoris-liard.vercel.app/thank-you"
+              value="https://nexoris-liard.vercel.app/thank-you" // Fixed URL
             />
             <input type="hidden" name="service" value={service} />
 
