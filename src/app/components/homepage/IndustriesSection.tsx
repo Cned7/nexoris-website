@@ -62,6 +62,7 @@ const IndustriesSection: React.FC = () => {
                 layout="fill"
                 alt={industry.title}
                 style={{ objectFit: 'cover' }}
+                loading="eager" // disables lazy loading
                 className="rounded-lg transition-opacity duration-300 opacity-90 group-hover:opacity-100"
               />
             </div>

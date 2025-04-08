@@ -126,7 +126,7 @@ const TechServices = () => {
                 layout="responsive"
                 width={600}
                 height={300}
-                loading="lazy"
+                loading="eager" // disables lazy loading
                 className="object-cover rounded-lg"
                 sizes="(max-width: 1024px) 100vw, 50vw" // Adjust sizes for responsiveness
               />

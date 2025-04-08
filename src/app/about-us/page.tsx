@@ -31,7 +31,7 @@ const AboutUsPage: React.FC = () => {
               fill
               className="rounded-lg shadow-lg object-cover"
               priority
-              loading="eager"
+              loading="eager" // disables lazy loading
             />
           </div>
           <div className="w-full">

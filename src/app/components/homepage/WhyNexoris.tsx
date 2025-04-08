@@ -55,6 +55,7 @@ const WhyNexoris: FC = () => {
             width={600}
             height={600}
             className="rounded-lg shadow-lg"
+            loading="eager" // disables lazy loading
           />
         </div>
       </div>
