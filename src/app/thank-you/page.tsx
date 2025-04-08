@@ -1,18 +1,17 @@
 'use client'
 
-// pages/thank-you.tsx
-
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const ThankYouPage = () => {
   const router = useRouter()
 
   useEffect(() => {
-    // Redirect the user to the homepage after a few seconds (optional)
-    setTimeout(() => {
-      router.push('/') // You can redirect to any page you prefer after submission.
+    const timeout = setTimeout(() => {
+      router.push('/')
     }, 5000)
+
+    return () => clearTimeout(timeout)
   }, [router])
 
   return (
