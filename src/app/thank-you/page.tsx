@@ -9,7 +9,7 @@ const ThankYouPage = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       router.push('/')
-    }, 5000)
+    }, 8000)
 
     return () => clearTimeout(timeout)
   }, [router])

@@ -41,6 +41,9 @@ export default function ContactPage() {
     }
   }
 
+  const targetEmail =
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'j.boscong7@gmail.com'
+
   return (
     <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
@@ -57,7 +60,6 @@ export default function ContactPage() {
           let&apos;s explore how we can bring your vision to life.
         </p>
 
-        {/* Contact Details */}
         <div className="space-y-4 text-body my-12 container mx-auto w-full">
           <div className="text-body text-lg">
             <h2 className="text-3xl font-semibold font-heading text-heading mb-8">
@@ -82,11 +84,10 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Contact Form */}
         <div>
           <form
             onSubmit={handleSubmit}
-            action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+            action={`https://nexoris-liard.vercel.app/thank-you`}
             method="POST"
             className="space-y-4 bg-background rounded-lg shadow shadow-[#bfb9ef] p-4 lg:p-8"
           >
