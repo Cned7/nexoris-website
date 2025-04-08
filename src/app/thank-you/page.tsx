@@ -1,4 +1,7 @@
+'use client'
+
 // pages/thank-you.tsx
+
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
