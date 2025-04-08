@@ -44,6 +44,11 @@ export default function ContactPage() {
   const targetEmail =
     process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'j.boscong7@gmail.com'
 
+  const thankYouURL =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000/thank-you'
+      : 'https://nexoris-liard.vercel.app/thank-you'
+
   return (
     <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
@@ -87,12 +92,12 @@ export default function ContactPage() {
         <div>
           <form
             onSubmit={handleSubmit}
-            action={`https://nexoris-liard.vercel.app/thank-you`}
+            action={`https://formsubmit.co/${targetEmail}`}
             method="POST"
             className="space-y-4 bg-background rounded-lg shadow shadow-[#bfb9ef] p-4 lg:p-8"
           >
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="/thank-you" />
+            <input type="hidden" name="_next" value={thankYouURL} />
             <input type="hidden" name="service" value={service} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -124,7 +129,6 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Service Dropdown */}
             <div className="relative w-full">
               <div
                 onClick={() => setDropdownOpen(!isDropdownOpen)}
