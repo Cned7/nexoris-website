@@ -16,15 +16,15 @@ const breadcrumbs = [
 
 const AboutUsPage: React.FC = () => {
   return (
-    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-28">
+    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       {/* Hero Section */}
-      <section className="px-4 py-5 sm:px-6 lg:px-20 bg-secondary-background">
+      <section className="px-8 py-5 bg-secondary-background">
         <h1 className="text-4xl sm:text-4xl font-bold my-8 text-center sm:text-left text-heading font-heading">
           About Nexoris Technologies
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="relative w-full h-64 sm:h-80 md:h-96 container mx-auto">
+          <div className="relative w-full h-52 sm:h-70 md:h-86 container mx-auto">
             <Image
               src="/images/about-us.webp"
               alt="About Nexoris Technologies Ltd"
@@ -39,26 +39,28 @@ const AboutUsPage: React.FC = () => {
             </h2>
             <p className="mb-4 text-justify text-body">
               At Nexoris Technologies, we&apos;re more than just a tech
-              company—we’re a group of dreamers, doers, and problem-solvers who
-              believe in the power of technology to make the world a better
-              place. We’re here to help businesses grow and evolve, bringing
-              innovative ideas and solutions to life, all while fostering a
-              sense of trust and collaboration every step of the way.
+              company—we&apos;re a group of dreamers, doers, and problem-solvers
+              who believe in the power of technology to make the world a better
+              place. We&apos;re here to help businesses grow and evolve,
+              bringing innovative ideas and solutions to life, all while
+              fostering a sense of trust and collaboration every step of the
+              way.
             </p>
             <p className="text-justify text-body">
               Our journey began with a simple idea: to use technology to solve
-              real problems. Since then, we’ve grown into a team of passionate
-              experts dedicated to delivering solutions that not only meet our
-              clients&apos; needs but exceed their expectations. Whether you’re
-              just starting your journey or looking to take your business to the
-              next level, we’re here to help you build what’s next.
+              real problems. Since then, we&apos;ve grown into a team of
+              passionate experts dedicated to delivering solutions that not only
+              meet our clients&apos; needs but exceed their expectations.
+              Whether you&apos;re just starting your journey or looking to take
+              your business to the next level, we&apos;re here to help you build
+              what&apos;s next.
             </p>
           </div>
         </div>
       </section>
 
       {/* Mission and Vision */}
-      <section className="px-4 py-10 sm:px-6 lg:px-20 bg-secondary-background">
+      <section className="px-8 py-10 bg-secondary-background">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center text-secondary-background">
           <div className="bg-heading p-6 rounded-xl shadow-md">
             <h3 className="text-2xl font-semibold mb-2 font-heading font-semibold">

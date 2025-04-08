@@ -31,34 +31,20 @@ export default function ContactPage() {
   ]
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    // Type-cast event.target to HTMLFormElement
     const form = event.target as HTMLFormElement
-
-    // Access form fields and cast them individually
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value
     const email = (form.elements.namedItem('email') as HTMLInputElement).value
-    const phone = (form.elements.namedItem('phone') as HTMLInputElement).value
-    const company = (form.elements.namedItem('company') as HTMLInputElement)
-      .value
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement)
-      .value
 
-    // Validate email format
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
+      event.preventDefault()
       alert('Please enter a valid email address')
-      return
     }
-
-    // Proceed with form submission logic
-    form.submit()
   }
 
   return (
     <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
+
       <section className="max-w-4xl mx-auto px-6 md:py-8 container">
         <h1 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-4">
           Let&apos;s Start Building Together
@@ -99,18 +85,13 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div>
           <form
-            onSubmit={handleSubmit} // Using the handleSubmit function to process form submission
+            onSubmit={handleSubmit}
             action={`https://formsubmit.co/${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
             method="POST"
             className="space-y-4 bg-background rounded-lg shadow shadow-[#bfb9ef] p-4 lg:p-8"
           >
-            {/* Hidden inputs */}
             <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="/thank-you" // Updated to relative path
-            />
+            <input type="hidden" name="_next" value="/thank-you" />
             <input type="hidden" name="service" value={service} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
