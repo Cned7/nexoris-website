@@ -53,7 +53,6 @@ export default function ContactPage() {
     }
 
     // Proceed with form submission logic
-    // (You can log or submit the data here)
     form.submit()
   }
 
