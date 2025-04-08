@@ -37,7 +37,7 @@ export default function TechStack() {
         <h2 className="text-2xl md:text-4xl font-bold mb-6 text-heading font-heading">
           Our Technology Stack
         </h2>
-        <p className="text-text max-w-2xl mx-auto mb-10 font-body">
+        <p className="text-text max-w-2xl mx-auto mb-10 font-body text-lg">
           We use cutting-edge technology to drive innovation. Our diverse
           expertise ensures we select the right tools for your project.
         </p>

@@ -63,8 +63,8 @@ export default function OurServices() {
               <p className="text-text font-body text-lg mt-3">{description}</p>
               <div className="mt-6 text-center">
                 <Link href={link}>
-                  <span className="inline-block bg-hover text-secondary-text px-4 py-2 rounded-lg font-normal text-sm hover:bg-heading transition duration-300 font-heading">
-                    Learn More
+                  <span className="inline-block bg-heading text-secondary-text px-4 py-2 rounded-lg font-normal text-base hover:bg-button transition duration-300 font-heading">
+                    View Services
                   </span>
                 </Link>
               </div>

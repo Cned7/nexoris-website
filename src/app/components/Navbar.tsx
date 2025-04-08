@@ -127,6 +127,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu Toggle */}
         <button
           className="lg:hidden text-heading"
+          aria-label="Mobile main menu"
           onClick={() => {
             setIsMobileMenuOpen(!isMobileMenuOpen)
             setIsMobileServicesOpen(false)
@@ -150,6 +151,7 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
               className="flex items-center justify-between w-full hover:bg-button rounded-lg py-3 hover:text-secondary-text cursor-pointer px-3 text-text font-normal text-lg font-heading"
+              aria-label="services list dropdown"
             >
               Services
               {isMobileServicesOpen ? (

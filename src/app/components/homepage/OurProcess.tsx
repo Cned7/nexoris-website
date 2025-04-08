@@ -62,7 +62,7 @@ export default function OurProcess() {
         <h2 className="text-2xl md:text-3xl font-bold text-heading font-heading py-5">
           Our Step-by-Step Process: From Vision to Success
         </h2>
-        <p className="text-text max-w-3xl mx-auto mt-4 font-body text-base">
+        <p className="text-text max-w-3xl mx-auto mt-4 font-body text-lg">
           At Nexoris Technologies, we eliminate roadblocks and unlock new
           possibilities with a structured, adaptable approach that drives faster
           innovation, seamless execution, and long-term success.
@@ -81,7 +81,7 @@ export default function OurProcess() {
               <h3 className="text-xl font-semibold text-heading font-heading">
                 {title}
               </h3>
-              <p className="text-text w-full lg:w-2xl pt-3 font-body">
+              <p className="text-text w-full lg:w-2xl pt-3 font-body text-lg">
                 {description}
               </p>
             </div>

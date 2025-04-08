@@ -153,21 +153,21 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       </div>
 
       {/* Copyright */}
-      <div className="flex flex-col lg:flex-row border-t border-purple mt-8 pt-4 text-center lg:justify-center lg:gap-10 text-sm md:text-[14px] list-none font-body">
+      <div className="flex flex-col lg:flex-row border-t border-purple mt-8 pt-4 text-center lg:justify-center gap-5 lg:gap-10 text-base list-none font-body">
         <p>&copy; {new Date().getFullYear()} Nexoris. All rights reserved.</p>
-        <li>
+        <p>
           <Link href="/privacy-policy" className="hover:text-hover transition">
             Privacy Policy
           </Link>
-        </li>
-        <li>
+        </p>
+        <p>
           <Link
             href="/cookie-policy"
             className="hover:text-hover transition font-body"
           >
             Cookie Policy
           </Link>
-        </li>
+        </p>
       </div>
     </footer>
   )

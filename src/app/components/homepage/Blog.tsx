@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -66,9 +67,9 @@ export default function BlogSection() {
               <p className="mt-2 text-text font-body text-lg">
                 {post.description}
               </p>
-              <span className="mt-4 inline-block text-secondary-text bg-hover font-medium py-2 rounded-lg px-4 hover:bg-heading">
-                Read More
-              </span>
+
+              {/* Read More Button with Dynamic Title */}
+              <ReadMoreButton title={post.title} />
             </div>
           </Link>
         ))}
@@ -83,5 +84,23 @@ export default function BlogSection() {
         </Link>
       </div>
     </section>
+  )
+}
+
+// Separate ReadMoreButton component to handle dynamic title
+function ReadMoreButton({ title }: { title: string }) {
+  const [accessibleTitle, setAccessibleTitle] = useState<string | null>(null)
+
+  useEffect(() => {
+    setAccessibleTitle(title) // Set the title only on the client
+  }, [title])
+
+  return (
+    <p className="mt-4 inline-block text-secondary-text bg-button font-medium py-2 rounded-lg px-4 hover:bg-heading">
+      Read More
+      {accessibleTitle && (
+        <span className="sr-only"> about {accessibleTitle}</span>
+      )}
+    </p>
   )
 }

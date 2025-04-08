@@ -35,6 +35,7 @@ export default function TechHero() {
             height={400}
             width={500}
             style={{ objectFit: 'cover' }}
+            loading="eager"
             className="object-contain max-w-full h-auto rounded-xl"
           />
         </div>
