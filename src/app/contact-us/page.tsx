@@ -83,7 +83,7 @@ export default function ContactPage() {
             <input
               type="hidden"
               name="_next"
-              value="https://nexoristech.com/thank-you"
+              value="https://https://nexoris-liard.vercel.app/thank-you"
             />
             <input type="hidden" name="service" value={service} />
 
