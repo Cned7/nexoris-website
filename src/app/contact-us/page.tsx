@@ -110,7 +110,7 @@ export default function ContactPage() {
             <input
               type="hidden"
               name="_next"
-              value="https://nexoris-liard.vercel.app/thank-you" // Fixed URL
+              value="/thank-you" // Updated to relative path
             />
             <input type="hidden" name="service" value={service} />
 
