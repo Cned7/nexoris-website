@@ -40,7 +40,7 @@ export default function FAQs() {
   }
 
   return (
-    <section className="relative bg-secondary-background rounded-lg mx-4 md:mx-6 lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 px-3 md:px-6 py-8">
+    <section className="relative bg-secondary-background rounded-lg lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 px-3 md:px-6 py-8">
       <Head>
         <script
           type="application/ld+json"
@@ -61,7 +61,7 @@ export default function FAQs() {
         />
       </Head>
       <div className="w-full mx-auto">
-        <h2 className="text-4xl font-bold text-heading text-center font-heading">
+        <h2 className=" text-2xl lg:text-4xl font-bold text-heading text-center font-heading">
           Frequently Asked Questions
         </h2>
         <div className="mt-8 space-y-4">
