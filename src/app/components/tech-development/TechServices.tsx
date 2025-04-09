@@ -108,11 +108,11 @@ const TechServices = () => {
             <div className="mt-6">
               <Link href="/contact-us">
                 <span className="text-heading underline hover:text-button">
-                  Let’s Build Together
+                  Let&apos;s Build Together
                 </span>
               </Link>
               <p className="text-base text-muted mt-2 italic">
-                We’re just one message away from starting something great.
+                We&apos;re just one message away from starting something great.
               </p>
             </div>
           </div>

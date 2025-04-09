@@ -18,8 +18,7 @@ export default function TechHero() {
             </p>
             <Link
               href="/contact-us"
-              className="bg-button text-secondary-text cursor-pointer font-heading text-lg rounded-lg  border-0 w-full lg:max-w-[280px] p-3 
-           hover:bg-hover"
+              className="bg-button text-secondary-text cursor-pointer font-heading text-lg rounded-lg  border-0 w-full lg:max-w-[280px] p-3 hover:bg-hover"
             >
               Let&#39;s Build Together
             </Link>
