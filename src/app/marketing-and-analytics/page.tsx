@@ -1,33 +1,33 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import TechHero from '../components/tech-development/TechHero'
-import TechServiceCards from '../components/tech-development/ServiceCards'
-import TechServices from '../components/tech-development/TechServices'
+import MarketingHero from '../components/marketing-analytics/MarketingHero'
+import MarketingServiceCards from '../components/marketing-analytics/ServiceCards'
+import MarketingServices from '../components/marketing-analytics/MarketingServices'
 import Breadcrumbs from '../components/Breadcrumbs'
 
 export const metadata: Metadata = {
-  title: 'Custom Software, Mobile Apps & Cloud | Nexoris',
+  title: 'SEO, Marketing Automation & Analytics | Nexoris Growth Tools',
   description:
-    'Nexoris designs and builds custom software, mobile apps, APIs, and cloud infrastructure that drive growth. Partner with us to deliver real results.',
+    'Drive growth with Nexoris. From SEO and content marketing to automation and analytics, we help you scale smarter and connect with the right audience.',
 }
 
 const breadcrumbs = [
   { name: 'Home', href: '/', isCurrentPage: false }, // explicitly setting isCurrentPage to false
   {
-    name: 'Technology Development',
-    href: '/technology-development',
+    name: 'Marketing & Analytics',
+    href: '/marketing-and-analytics',
     isCurrentPage: true,
   }, // this is the current page
 ]
 
-export default function ServicesPage() {
+export default function MarketingAnalytics() {
   return (
     <>
       <Head>
         <link
           rel="canonical"
-          href="https://nexoris.com/technology-development"
+          href="https://nexoris.com/marketing-and-analytics"
         />
         <script
           type="application/ld+json"
@@ -35,10 +35,10 @@ export default function ServicesPage() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Service',
-              name: 'Nexoris Custom Software Solutions',
-              url: 'https://nexoris.com/technology-development',
+              name: 'Nexoris Marketing and Analytics',
+              url: 'https://nexoris.com/marketing-and-analytics',
               description:
-                'Custom software, mobile apps, APIs, DevOps, and cloud solutions tailored for scalable business growth.',
+                'SEO & Content Marketing, Analytics & Reporting and Marketing Automation to help you grow smarter and measure what matters.',
               provider: {
                 '@type': 'Organization',
                 name: 'Nexoris',
@@ -51,18 +51,18 @@ export default function ServicesPage() {
 
       <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
         <Breadcrumbs breadcrumbs={breadcrumbs} />
-        <TechHero />
-        <TechServiceCards />
-        <TechServices />
+        <MarketingHero />
+        <MarketingServiceCards />
+        <MarketingServices />
       </main>
 
       <section className="bg-background pb-5 px-6 text-center">
         <h2 className="text-2xl font-semibold mb-4 font-heading text-heading">
-          Ready to build something better?
+          Ready to turn insights into growth and visibility into value?
         </h2>
         <Link
           href="/contact-us"
-          className="inline-block px-4 py-3 text-secondary-text bg-button hover:bg-hover font-semibold rounded-xl transition-transform duration-300 hover:scale-105"
+          className="inline-block px-4 py-3 mt-8 text-secondary-text bg-button hover:bg-hover font-semibold rounded-xl transition-transform duration-300 hover:scale-105"
         >
           Talk to Our Team
         </Link>

@@ -6,15 +6,16 @@ export default function Hero() {
     <section className="bg-secondary-background rounded-lg">
       <div className="flex justify-between flex-col-reverse md:flex-row gap-8 px-4 py-6 lg:px-8">
         <div className="flex flex-col md:w-1/2 lg:mt-10 w-full text-center">
-          <h1 className="text-3xl lg:text-4xl xl:text-5xl text-heading font-semibold font-heading tracking-normal">
-            Breathing Life into Ideas with Digital Innovation
+          <h1 className="text-3xl lg:text-4xl text-heading font-semibold font-heading tracking-normal">
+            Crafting digital experiences that connect, convert, and captivate
           </h1>
           <article className="text-lg font-body text-text mt-5 lg:mt-8">
             <p className="mb-8 lg:mb-12">
-              At Nexoris Technologies, we transform your ideas into impactful
-              digital experiences using innovative technology. From start to
-              finish, we craft solutions that drive results and stand the test
-              of time.
+              We believe great design is more than beautiful visuals. It&apos;s
+              about solving problems and creating emotional connections. From
+              UI/UX to full product design and immersive AR/VR development,
+              Nexoris helps brands bring digital ideas to life in ways users
+              love.
             </p>
           </article>
           <Link

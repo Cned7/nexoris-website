@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function ProductDesign() {
+export function ARVRDevelopment() {
   return (
     <section
       className="bg-background text-white mt-10 lg:mt-15 bg-secondary-background"
-      id="product-design"
+      id="arvr-development"
     >
       <div className="flex justify-between flex-col lg:flex-row gap-8 px-4  mt-4 lg:px-8 lg:pb-8 pt-3 container mx-auto">
-        <div className="relative flex lg:w-1/2 w-full justify-start my-auto">
+        <div className="relative flex lg:w-1/2 w-full justify-start my-auto pt-8">
           <Image
-            src="/images/product-design.webp"
+            src="/images/ar-av.webp"
             alt="Product Design"
             height={300}
             width={700}
@@ -18,14 +18,14 @@ export function ProductDesign() {
           />
         </div>
         <div className="text-text font-lg flex flex-col lg:w-1/2 w-full justify-center">
-          <h2 className="text-heading text-4xl font-bold pt-8 mb-8">
-            Product Design
+          <h2 className="text-heading text-4xl font-bold text-center pt-8 mb-8">
+            AR/VR Development
           </h2>
           <p className="text-text font-body text-lg">
-            We help startups and enterprises design digital products that people
-            want to use. From early-stage prototyping and journey mapping to
-            branding and interaction flows, we co-create experiences that are as
-            functional as they are beautiful.
+            Create immersive digital experiences for education, retail,
+            training, and entertainment. Using Unity, Unreal Engine, and WebXR,
+            we build next-gen AR and VR applications that drive engagement and
+            push boundaries.
           </p>
           <Link
             href="/contact-us"

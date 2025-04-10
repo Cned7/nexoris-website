@@ -10,7 +10,7 @@ type Breadcrumb = {
 const Breadcrumbs = ({ breadcrumbs }: { breadcrumbs: Breadcrumb[] }) => {
   return (
     <nav className="bg-background py-2 my-4 w-full">
-      <ol className="flex space-x-4 text-base font-medium text-heading">
+      <ol className="flex text-base font-medium text-heading">
         {breadcrumbs.map((breadcrumb, index) => (
           <li key={index} className="flex items-center">
             {breadcrumb.isCurrentPage ? (

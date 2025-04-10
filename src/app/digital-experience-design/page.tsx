@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Hero from '../components/design-experience/DesignHero'
 import { ProductDesign } from '../components/design-experience/ProductDesign'
-import { UIUXConsulting } from '../components/design-experience/UiUxConsult'
-import { ARAVSolutions } from '../components/design-experience/ArAvSolutions'
+import { UIUXDesign } from '../components/design-experience/UiUxDesign'
+import { ARVRDevelopment } from '../components/design-experience/ArVrDevelopment'
 import { DesignCtaSection } from '../components/design-experience/UiUxCta'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { Metadata } from 'next'
@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 const breadcrumbs = [
   { name: 'Home', href: '/', isCurrentPage: false },
   {
-    name: 'Design & Experience',
-    href: '/design-experience',
+    name: 'Digital Experience & Design',
+    href: '/digital-experience-design',
     isCurrentPage: true,
   },
 ]
 
-export default function DesignProductPage() {
+export default function DesignServicePage() {
   return (
     <>
       <Head>
@@ -32,21 +32,24 @@ export default function DesignProductPage() {
           name="description"
           content="Nexoris creates user-centered digital experiences that drive engagement. From product design and UX consulting to immersive AR/VR solutions, we help you shape the future."
         />
-        <link rel="canonical" href="https://nexoris.com/design-experience" />
+        <link
+          rel="canonical"
+          href="https://nexoristech.com/digital-experience-design"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Service',
-              name: 'Nexoris Design & Experience Solutions',
-              url: 'https://nexoris.com/design-experience',
+              name: 'Nexoris Digital Experience Design',
+              url: 'https://nexoristech.com/digital-experience-design',
               description:
                 'Nexoris delivers product design, UX consulting, and AR/VR experiences that engage, inspire, and convert.',
               provider: {
                 '@type': 'Organization',
                 name: 'Nexoris Technologies Ltd',
-                url: 'https://nexoris.com',
+                url: 'https://nexoristech.com',
               },
             }),
           }}
@@ -61,20 +64,20 @@ export default function DesignProductPage() {
                 '@type': 'ListItem',
                 position: index + 1,
                 name: crumb.name,
-                item: `https://nexoris.com${crumb.href}`,
+                item: `https://nexoristech.com${crumb.href}`,
               })),
             }),
           }}
         />
       </Head>
 
-      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28">
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <Hero />
         <DesignServiceCards />
+        <UIUXDesign />
         <ProductDesign />
-        <UIUXConsulting />
-        <ARAVSolutions />
+        <ARVRDevelopment />
         <DesignCtaSection />
       </main>
     </>

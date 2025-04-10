@@ -4,10 +4,13 @@ interface Service {
 }
 
 const services: Service[] = [
-  { name: 'Technology & Development', path: '/technology-development' },
-  { name: 'Design & Experience', path: '/design-experience' },
-  { name: 'Cloud & Automation', path: '/cloud-automation' },
-  { name: 'Marketing & Growth', path: '/marketing-growth' },
+  {
+    name: 'Software Development Services',
+    path: '/software-development-services',
+  },
+  { name: 'Digital Experience & Design', path: '/digital-experience-design' },
+  { name: 'Marketing & Analytics', path: '/marketing-and-analytics' },
+  { name: 'Consulting & Innovation', path: '/consulting-innovation' },
 ]
 
 export default services
