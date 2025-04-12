@@ -9,9 +9,9 @@ import { Metadata } from 'next'
 import DesignServiceCards from '../components/design-experience/DesignServicesCard'
 
 export const metadata: Metadata = {
-  title: 'Product Design, UI/UX Consulting & AR/VR | Nexoris',
+  title: 'Digital Experience & Design',
   description:
-    'Nexoris creates user-centered digital experiences that drive engagement. From product design and UX consulting to immersive AR/VR solutions, we help you shape the future.',
+    'Bring your digital ideas to life with Nexoris. We offer UI/UX, product design, and AR/VR services that create memorable experiences.',
 }
 
 const breadcrumbs = [
@@ -27,11 +27,6 @@ export default function DesignServicePage() {
   return (
     <>
       <Head>
-        <title>Product Design, UI/UX Consulting & AR/VR | Nexoris</title>
-        <meta
-          name="description"
-          content="Nexoris creates user-centered digital experiences that drive engagement. From product design and UX consulting to immersive AR/VR solutions, we help you shape the future."
-        />
         <link
           rel="canonical"
           href="https://nexoristech.com/digital-experience-design"
@@ -42,10 +37,10 @@ export default function DesignServicePage() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Service',
-              name: 'Nexoris Digital Experience Design',
+              name: 'Digital Design Services by Nexoris Technologies',
               url: 'https://nexoristech.com/digital-experience-design',
               description:
-                'Nexoris delivers product design, UX consulting, and AR/VR experiences that engage, inspire, and convert.',
+                'Nexoris offers UI/UX, product design, and AR/VR solutions that engage users and create impactful digital experiences.',
               provider: {
                 '@type': 'Organization',
                 name: 'Nexoris Technologies Ltd',
@@ -71,7 +66,7 @@ export default function DesignServicePage() {
         />
       </Head>
 
-      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28">
+      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <Hero />
         <DesignServiceCards />

@@ -31,16 +31,16 @@ export const metadata = {
   },
 }
 
-// JSON-LD Schema
+// JSON-LD Schema for Organization
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Nexoris Technologies Ltd',
   url: 'https://nexoris-liard.vercel.app/',
-  logo: 'https://nexoris-liard.vercel.app/logo.png',
+  logo: 'https://nexoris-liard.vercel.app/logo.webp',
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+1234567890',
+    telephone: '+1234567890', // Replace with actual contact number
     contactType: 'customer service',
     email: 'contact@nexoris.com',
   },
@@ -55,14 +55,38 @@ export default function Home() {
     <main className="mx-4 md:mx-6 lg:mx-12 mt-28 lg:mt-36 xl:mx-21">
       {/* Schema for SEO */}
       <Schema schema={organizationSchema} />
-      <HomeHero />
-      <OurServices />
-      <WhyNexoris />
-      <IndustriesSection />
-      <OurProcess />
-      <TechStack />
-      <Faqs />
-      <Blog />
+
+      <section>
+        <HomeHero />
+      </section>
+
+      <section>
+        <OurServices />
+      </section>
+
+      <section>
+        <WhyNexoris />
+      </section>
+
+      <section>
+        <IndustriesSection />
+      </section>
+
+      <section>
+        <OurProcess />
+      </section>
+
+      <section>
+        <TechStack />
+      </section>
+
+      <section>
+        <Faqs />
+      </section>
+
+      <section>
+        <Blog />
+      </section>
     </main>
   )
 }

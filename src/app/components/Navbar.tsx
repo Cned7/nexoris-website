@@ -49,6 +49,12 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-4 text-heading font-normal text-lg font-heading xl:ml-30">
           <Link
+            href="/"
+            className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-hover rounded-lg px-4 py-2"
+          >
+            Home
+          </Link>
+          <Link
             href="/about-us"
             className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-hover rounded-lg px-4 py-2"
           >
@@ -140,6 +146,12 @@ const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="bg-background px-3 w-full z-20 absolute top-14 rounded mx-auto mt-4 text-lg">
           <nav className="flex flex-col gap-y-3 py-5 bg-secondary-background text-heading w-full container text-lg leading-relaxed">
+            <Link
+              href="/"
+              className="hover:bg-button hover:text-secondary-text border border-transparent hover:border-hover rounded-lg px-4 py-2"
+            >
+              Home
+            </Link>
             <Link
               href="/about-us"
               className="hover:text-secondary-text hover:bg-button rounded-lg py-1 px-3 font-normal text-heading font-heading"

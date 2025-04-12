@@ -19,7 +19,7 @@ const body = Roboto({
 // Default metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Nexoris Technologies – Enabling Possibilities',
+    default: 'Nexoris Technologies – Ideate. Build. Succeed',
     template: '%s | Nexoris Technologies',
   },
   description:
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 
   openGraph: {
-    title: 'Nexoris Technologies – Enabling Possibilities',
+    title: 'Nexoris Technologies – Ideate. Build. Succeed',
     description:
       'Your partner in software development, cloud solutions, and digital transformation.',
     url: 'https://nexoristech.com',
@@ -82,7 +82,7 @@ export default function RootLayout({
         {/* Open Graph Meta Tags for Social Media (Facebook, LinkedIn) */}
         <meta
           property="og:title"
-          content="Nexoris Technologies – Enabling Possibilities"
+          content="Nexoris Technologies – Ideate. Build. Succeed"
         />
         <meta
           property="og:description"
@@ -99,7 +99,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Nexoris Technologies – Enabling Possibilities"
+          content="Nexoris Technologies – Ideate. Build. Succeed"
         />
         <meta
           name="twitter:description"
@@ -153,9 +153,6 @@ export default function RootLayout({
 
         {/* Theme Color for Mobile Browsers */}
         <meta name="theme-color" content="#ffffff" />
-
-        {/* Title of the Page */}
-        <title>Nexoris Technologies – Enabling Possibilities</title>
       </head>
       <body>
         {/* Navbar rendered across all pages */}

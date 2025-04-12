@@ -4,9 +4,9 @@ import Link from 'next/link'
 export default function TechHero() {
   return (
     <section className="bg-secondary-background rounded-lg">
-      <div className="flex justify-between flex-col-reverse md:flex-row gap-8 px-4 py-8 lg:p-8">
+      <div className="flex justify-between flex-col-reverse lg:flex-row gap-8 px-4 py-8 lg:p-8">
         {/* Left: Text Content */}
-        <div className="flex flex-col md:w-1/2 lg:mt-10 w-full text-center">
+        <div className="flex flex-col lg:w-1/2 lg:mt-10 w-full text-center">
           <h1 className=" text-3xl lg:text-4xl text-heading font-semibold font-heading tracking-normal">
             Smart Code. Scalable Systems. Real Innovation.
           </h1>
@@ -28,12 +28,12 @@ export default function TechHero() {
 
         {/* Right: Hero Image */}
 
-        <div className="relative flex md:w-1/2 justify-center lg:justify-end">
+        <div className="relative flex lg:w-1/2 justify-center lg:justify-end">
           <Image
             src="/images/hero-technology-development.webp"
             alt="Hero Section Image"
             height={400}
-            width={500}
+            width={600}
             style={{ objectFit: 'cover' }}
             className="object-contain max-w-full h-auto rounded-xl"
           />

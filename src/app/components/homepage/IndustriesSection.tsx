@@ -56,7 +56,7 @@ const IndustriesSection: React.FC = () => {
             className="p-4 bg-background cursor-pointer rounded-2xl border border-button shadow-lg shadow-secondary-text hover:shadow-[#bfb9ef] transition-shadow duration-300 font-body text-lg"
           >
             {/* Next.js Optimized Image */}
-            <div className="relative w-full h-35">
+            <div className="relative w-full h-48">
               <Image
                 src={industry.image}
                 layout="fill"

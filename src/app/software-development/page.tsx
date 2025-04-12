@@ -6,19 +6,20 @@ import TechServiceCards from '../components/development-services/ServiceCards'
 import TechServices from '../components/development-services/TechServices'
 import Breadcrumbs from '../components/Breadcrumbs'
 
+// Metadata for the page
 export const metadata: Metadata = {
-  title: 'Custom Software, Mobile Apps & Cloud | Nexoris',
+  title: 'Web, Mobile Apps, & Custom Solutions',
   description:
     'Nexoris designs and builds custom software, mobile apps, APIs, and cloud infrastructure that drive growth. Partner with us to deliver real results.',
 }
 
 const breadcrumbs = [
-  { name: 'Home', href: '/', isCurrentPage: false }, // explicitly setting isCurrentPage to false
+  { name: 'Home', href: '/', isCurrentPage: false },
   {
     name: 'Software Development Services',
     href: '/development-services',
     isCurrentPage: true,
-  }, // this is the current page
+  },
 ]
 
 export default function DevelopmentServicePage() {
@@ -27,7 +28,7 @@ export default function DevelopmentServicePage() {
       <Head>
         <link
           rel="canonical"
-          href="https://nexoristech.com/software-development-services"
+          href="https://nexoristech.com/software-development"
         />
         <script
           type="application/ld+json"
@@ -49,14 +50,29 @@ export default function DevelopmentServicePage() {
         />
       </Head>
 
-      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28">
+      {/* Main content section */}
+      <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+        {/* Breadcrumbs section */}
         <Breadcrumbs breadcrumbs={breadcrumbs} />
-        <TechHero />
-        <TechServiceCards />
-        <TechServices />
+
+        {/* Hero section */}
+        <section>
+          <TechHero />
+        </section>
+
+        {/* Service Cards section */}
+        <section>
+          <TechServiceCards />
+        </section>
+
+        {/* Additional services section */}
+        <section>
+          <TechServices />
+        </section>
       </main>
 
-      <section className="bg-background pb-5 px-6 text-center">
+      {/* Call to Action section */}
+      <footer className="bg-background pb-5 px-6 text-center">
         <h2 className="text-2xl font-semibold mb-4 font-heading text-heading">
           Ready to build something better?
         </h2>
@@ -66,7 +82,7 @@ export default function DevelopmentServicePage() {
         >
           Talk to Our Team
         </Link>
-      </section>
+      </footer>
     </>
   )
 }

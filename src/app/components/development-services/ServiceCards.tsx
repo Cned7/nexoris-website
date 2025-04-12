@@ -14,10 +14,10 @@ export default function TechServiceCards() {
         ].map(({ title, id }) => (
           <Link
             key={title}
-            href={`/technology-development${id}`}
+            href={`/software-development${id}`}
             className="block p-6 border border-heading hover:shadow-lg rounded-xl bg-secondary-background text-heading"
           >
-            <h3 className="font-semibold text-xl mb-1">{title}</h3>
+            <p className="font-semibold text-lg mb-1">{title}</p>
             <p className="text-gray-600 text-base text-heading">Learn more</p>
           </Link>
         ))}
