@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { DesignCtaSection } from '../components/design-experience/UiUxCta'
 import Breadcrumbs from '../components/Breadcrumbs'
 import { Metadata } from 'next'
 import ConsultingServiceCards from '../components/consulting-service/ConsultingServiceCards'
@@ -8,6 +6,7 @@ import ConsultingHero from '../components/consulting-service/ConsultingHero'
 import ConsultingServices from '../components/consulting-service/ConsultationServices'
 import { ConsultingCtaSection } from '../components/consulting-service/ConsultingCta'
 
+// Metadata for the page
 export const metadata: Metadata = {
   title: 'Smart Consulting for Growing Teams',
   description:
@@ -23,47 +22,60 @@ const breadcrumbs = [
   },
 ]
 
+// Organization schema
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Nexoris Technologies Ltd', // Use the exact name
+  url: 'https://nexoristech.com', // Use the official website URL
+  logo: 'https://nexoristech.com/logo.webp', // Use the correct logo URL
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1234567890', // Your phone number
+    contactType: 'customer service',
+    email: 'contact@nexoris.com', // Your email
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/nexoris-technologies', // Your LinkedIn
+    'https://twitter.com/nexoris_tech', // Your Twitter
+    // Add other social media profiles
+  ],
+}
+
+// Service schema (aligning with the simpler structure)
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Nexoris Consulting & Innovation Services', // More concise name
+  url: 'https://nexoristech.com/consulting-and-innovation',
+  description:
+    'Expert consulting in digital transformation, product development, and SEO to help startups and small businesses grow.', // Shorter description
+  provider: {
+    '@type': 'Organization',
+    name: 'Nexoris', // Shorter, consistent name
+    url: 'https://nexoristech.com',
+  },
+}
+
 export default function ConsultingServicePage() {
+  // BreadcrumbList schema
+  const breadcrumbsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: `https://nexoristech.com${crumb.href}`,
+    })),
+  }
+
   return (
     <>
       <Head>
-        <title>Smart Consulting for Growing Teams</title>
         <link
           rel="canonical"
           href="https://nexoristech.com/consulting-and-innovation"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Service',
-              name: 'Nexoris Technologies Consulting & Innovation',
-              url: 'https://nexoristech.com/consulting-and-innovation',
-              description:
-                'Nexoris Technologies offers expert consulting and innovative solutions to help startups and small businesses achieve their digital transformation, product growth, and SEO objectives.',
-              provider: {
-                '@type': 'Organization',
-                name: 'Nexoris Technologies Ltd',
-                url: 'https://nexoristech.com',
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BreadcrumbList',
-              itemListElement: breadcrumbs.map((crumb, index) => ({
-                '@type': 'ListItem',
-                position: index + 1,
-                name: crumb.name,
-                item: `https://nexoristech.com${crumb.href}`,
-              })),
-            }),
-          }}
         />
       </Head>
 
@@ -89,6 +101,16 @@ export default function ConsultingServicePage() {
           <ConsultingCtaSection />
         </section>
       </main>
+      {/* JSON-LD Schema for Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      {/* JSON-LD Schema for BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
     </>
   )
 }

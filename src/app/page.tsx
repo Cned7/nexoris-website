@@ -50,11 +50,67 @@ const organizationSchema = {
   ],
 }
 
+// FAQ Schema (JSON-LD)
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What makes Nexoris different from other technology firms?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nexoris focuses on innovation-first, scalable solutions tailored to each client’s needs. We combine expertise in software, automation, and digital transformation to drive business growth.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What services does Nexoris offer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We provide custom software development, cloud solutions, AI-driven automation, SEO & content marketing, UX/UI design, and digital transformation consulting.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Who does Nexoris work with?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Our clients range from startups to enterprises in FinTech, Healthcare, E-commerce, Manufacturing, Education, Retail, Logistics, and AI-driven businesses.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer ongoing support and maintenance?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes! We provide post-launch support, maintenance, and continuous optimization to ensure long-term performance and adaptability.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I get started with Nexoris?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Simply contact us through our form, book a free consultation, or send an email to discuss your project and partnership opportunities.',
+      },
+    },
+  ],
+}
+
 export default function Home() {
   return (
     <main className="mx-4 md:mx-6 lg:mx-12 mt-28 lg:mt-36 xl:mx-21">
       {/* Schema for SEO */}
       <Schema schema={organizationSchema} />
+
+      {/* Inject FAQ Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
 
       <section>
         <HomeHero />

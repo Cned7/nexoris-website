@@ -1,185 +1,117 @@
-'use client'
+import ContactPage from './ContactClient'
+import { Metadata } from 'next'
+import Head from 'next/head' // Import Head component
 
-import { useState } from 'react'
-import Breadcrumbs from '../components/Breadcrumbs'
+export const metadata: Metadata = {
+  title: 'Contact Us | Nexoris Technologies',
+  description:
+    "Get in touch with Nexoris Technologies. Let’s talk about your ideas, projects, and challenges. We’re here to help you build what's next.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://nexoristech.com/contact-us',
+  },
+  openGraph: {
+    title: 'Contact Us | Nexoris Technologies',
+    description:
+      'Reach out to Nexoris Technologies for innovative solutions in software, cloud, design, and strategy.',
+    url: 'https://nexoristech.com/contact-us',
+    type: 'website',
+    images: [
+      {
+        url: 'https://nexoristech.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Nexoris Technologies',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Nexoris Technologies',
+    description:
+      'Let’s talk about your project and how we can work together to create meaningful tech.',
+    images: ['https://nexoristech.com/og-image.jpg'],
+  },
+}
 
-export default function ContactPage() {
-  const [service, setService] = useState('')
-  const [isDropdownOpen, setDropdownOpen] = useState(false)
+// Breadcrumbs array
+const breadcrumbs = [
+  { name: 'Home', href: '/', isCurrentPage: false },
+  { name: 'Contact Us', href: '/contact-us', isCurrentPage: true },
+]
 
-  const services = [
-    'Software Development',
-    'Mobile App Development',
-    'Cloud Solutions',
-    'DevOps & Automations',
-    'API Development & Integrations',
-    'Cybersecurity Solutions',
-    'Product Design',
-    'UI/UX Design Consulting',
-    'AR/VR Solutions',
-    'SEO & Content Marketing',
-    'Marketing Automation',
-    'Analytics & Reporting',
-    'Digital Transformation Consulting',
-    'Corporate Training',
-    'Others',
-  ]
+// Organization schema
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Nexoris Technologies Ltd', // Replace with your full company name
+  url: 'https://nexoristech.com/contact-us', // Replace with your Contact Us page URL
+  logo: 'https://nexoristech.com/images/logo.webp', // Replace with your logo URL
+  description:
+    'Contact Nexoris Technologies Ltd for inquiries about our software development, design, marketing, and consulting services. Reach out to our team to discuss your project needs.', // Replace with a relevant description
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Your Street Address', // Replace with your street address
+    addressLocality: 'Lagos', // Replace with your city
+    addressRegion: 'Lagos', // Replace with your region/state
+    postalCode: 'Your Postal Code', // Replace with your postal code
+    addressCountry: 'NG', // Replace with your country code (NG for Nigeria)
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+234-XXXXXXXXXXX', // Replace with your primary phone number (Nigerian format)
+      contactType: 'customer service',
+      areaServed: 'NG', // Serving Nigeria
+      availableLanguage: ['en'], // Available in English
+    },
+    {
+      '@type': 'ContactPoint',
+      email: 'info@nexoris.com', // Replace with your primary contact email
+      contactType: 'general inquiries',
+    },
+  ],
+  sameAs: [
+    'https://www.linkedin.com/company/nexoris-technologies', // Replace with your LinkedIn URL
+    'https://twitter.com/nexoris', // Replace with your Twitter URL
+    // Add other social media profiles
+  ],
+}
 
-  const breadcrumbs = [
-    { name: 'Home', href: '/', isCurrentPage: false },
-    { name: 'Contact Us', href: '/contact-us', isCurrentPage: true },
-  ]
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    const form = event.target as HTMLFormElement
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      event.preventDefault()
-      alert('Please enter a valid email address')
-    }
+export default function Contact() {
+  // BreadcrumbList schema
+  const breadcrumbsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: `https://nexoristech.com${crumb.href}`,
+    })),
   }
 
-  const targetEmail =
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'j.boscong7@gmail.com'
-
-  const thankYouURL =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000/thank-you'
-      : 'https://nexoris-liard.vercel.app/thank-you'
-
   return (
-    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21 bg-secondary-background">
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-      <section className="max-w-4xl mx-auto px-6 md:py-8 container">
-        <h1 className="text-3xl md:text-4xl font-bold text-heading font-heading mb-4">
-          Let&apos;s Start Building Together
-        </h1>
-        <p className="text-lg text-body my-8">
-          Got a bold idea, a complex challenge, or just need expert guidance on
-          your next big move? We&apos;re here to help. Whether you&apos;re
-          looking to launch a product, modernize your tech stack, or explore
-          innovative digital strategies — let&apos;s talk. Reach out to us and
-          let&apos;s explore how we can bring your vision to life.
-        </p>
-
-        <div className="space-y-4 text-body my-12 container mx-auto w-full">
-          <div className="text-body text-lg">
-            <h2 className="text-3xl font-semibold font-heading text-heading mb-8">
-              Get in Touch
-            </h2>
-            <p>
-              Email:{' '}
-              <a href="mailto:hello@nexoristech.com" className="text-blue-600">
-                hello@nexoristech.com
-              </a>
-            </p>
-            <p>
-              Phone:{' '}
-              <a href="tel:+234XXXXXXXXXX" className="text-blue-600">
-                +234 XXX XXX XXXX
-              </a>
-            </p>
-            <p>Office Hours: Monday – Friday, 9:00 AM – 5:00 PM (WAT)</p>
-            <p>
-              Location: Lagos, Nigeria (Remote-first, serving clients globally)
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <form
-            onSubmit={handleSubmit}
-            action={`https://formsubmit.co/${targetEmail}`}
-            method="POST"
-            className="space-y-4 bg-background rounded-lg shadow shadow-[#bfb9ef] p-4 lg:p-8"
-          >
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value={thankYouURL} />
-            <input type="hidden" name="service" value={service} />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                name="name"
-                type="text"
-                required
-                placeholder="Full Name"
-                className="p-3 border border-[#bfb9ef] rounded-md w-full outline-none"
-              />
-              <input
-                name="email"
-                type="email"
-                required
-                placeholder="Email Address"
-                className="p-3 border border-[#bfb9ef] rounded-md w-full outline-none"
-              />
-              <input
-                name="phone"
-                type="tel"
-                placeholder="Phone Number (optional)"
-                className="p-3 border border-[#bfb9ef] rounded-md w-full outline-none"
-              />
-              <input
-                name="company"
-                type="text"
-                placeholder="Company (optional)"
-                className="p-3 border border-[#bfb9ef] rounded-md w-full outline-none"
-              />
-            </div>
-
-            <div className="relative w-full">
-              <div
-                onClick={() => setDropdownOpen(!isDropdownOpen)}
-                className="cursor-pointer p-3 border border-[#bfb9ef] rounded-md w-full outline-none"
-              >
-                <span>{service || 'Select a Service'}</span>
-                <span className="float-right">&#9662;</span>
-              </div>
-              {isDropdownOpen && (
-                <div className="absolute w-full bg-background border border-[#bfb9ef] mt-1 rounded-md max-h-60 overflow-auto z-10">
-                  {services.map((svc) => (
-                    <div
-                      key={svc}
-                      className="cursor-pointer p-2 hover:bg-button hover:text-secondary-text transition-colors duration-200"
-                      onClick={() => {
-                        setService(svc)
-                        setDropdownOpen(false)
-                      }}
-                    >
-                      {svc}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <textarea
-              name="message"
-              placeholder="Tell us more about your project or inquiry"
-              required
-              rows={6}
-              className="p-3 border border-[#bfb9ef] rounded-md w-full outline-none resize-none"
-            />
-
-            <label className="flex items-start space-x-2 text-sm text-body">
-              <input type="checkbox" name="consent" required className="mt-1" />
-              <span>
-                I consent to the processing of my data in accordance with
-                Nexoris Technologies&apos; privacy policy.
-              </span>
-            </label>
-
-            <button
-              type="submit"
-              className="bg-button hover:bg-heading cursor-pointer text-white font-semibold py-3 px-6 rounded-md transition duration-200"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
+    <>
+      <Head>
+        {/* Organization Schema in Head */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </Head>
+      {/* Render the ContactPage component which contains the form */}
+      <ContactPage />
+      {/* BreadcrumbList Schema in return (placed after the main content) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+    </>
   )
 }

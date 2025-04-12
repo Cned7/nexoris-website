@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Metadata } from 'next' // This import might not be needed if you're using the pages directory, check your Next.js version
+import { Metadata } from 'next'
 import MarketingHero from '../components/marketing-analytics/MarketingHero'
 import MarketingServiceCards from '../components/marketing-analytics/ServiceCards'
 import MarketingServices from '../components/marketing-analytics/MarketingServices'
@@ -22,31 +22,66 @@ const breadcrumbs = [
   },
 ]
 
+// Organization schema
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Nexoris', // Use the exact name
+  url: 'https://nexoris.com', // Use the official website URL
+  logo: 'https://nexoris.com/logo.webp', // Use the correct logo URL
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1234567890', // Your phone number
+    contactType: 'customer service',
+    email: 'contact@nexoris.com', // Your email
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/nexoris', // Your LinkedIn
+    'https://twitter.com/nexoris', // Your Twitter
+    // Add other social media profiles
+  ],
+}
+
+// Service schema
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SEO, Content & Analytics by Nexoris',
+  url: 'https://nexoris.com/marketing-and-analytics',
+  description:
+    'Nexoris provides SEO, content marketing, and data analytics services to help you grow smarter, engage your audience, and make data-driven decisions.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Nexoris',
+    url: 'https://nexoris.com',
+  },
+}
+
 export default function MarketingAnalytics() {
+  // Generate BreadcrumbList schema dynamically
+  const breadcrumbsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: `https://nexoris.com${crumb.href}`,
+    })),
+  }
+
   return (
     <>
       <Head>
-        <title>SEO & Marketing Automation for Growth | Nexoris</title>
         <link
           rel="canonical"
           href="https://nexoris.com/marketing-and-analytics"
         />
+        {/* Organization Schema in Head */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Service',
-              name: 'SEO & Insights for Growth by Nexoris',
-              url: 'https://nexoris.com/marketing-and-analytics',
-              description:
-                'Nexoris provides SEO, marketing automation, and analytics services to help you grow smarter, engage your audience, and make data-driven decisions.',
-              provider: {
-                '@type': 'Organization',
-                name: 'Nexoris',
-                url: 'https://nexoris.com',
-              },
-            }),
+            __html: JSON.stringify(organizationSchema),
           }}
         />
       </Head>
@@ -73,7 +108,7 @@ export default function MarketingAnalytics() {
       </main>
 
       {/* Call to Action section */}
-      <footer className="bg-background pb-5 px-6 text-center">
+      <aside className="bg-background pb-5 px-6 text-center">
         <h2 className="text-2xl font-semibold mb-4 font-heading text-heading">
           Ready to turn insights into growth and visibility into value?
         </h2>
@@ -83,7 +118,19 @@ export default function MarketingAnalytics() {
         >
           Talk to Our Team
         </Link>
-      </footer>
+      </aside>
+
+      {/* JSON-LD Schema for Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+
+      {/* JSON-LD Schema for BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
     </>
   )
 }

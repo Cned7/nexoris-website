@@ -2,9 +2,8 @@
 
 import { useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
-import Head from 'next/head'
 
-const faqs = [
+export const faqs = [
   {
     question: 'What makes Nexoris different from other technology firms?',
     answer:
@@ -41,25 +40,6 @@ export default function FAQs() {
 
   return (
     <section className="relative bg-secondary-background rounded-lg lg:mx-12 mt-6 lg:mt-12 xl:mx-21 overflow-hidden xl-mt-5 px-3 md:px-6 py-8">
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: faqs.map((faq) => ({
-                '@type': 'Question',
-                name: faq.question,
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: faq.answer,
-                },
-              })),
-            }),
-          }}
-        />
-      </Head>
       <div className="w-full mx-auto">
         <h2 className=" text-2xl lg:text-4xl font-bold text-heading text-center font-heading">
           Frequently Asked Questions

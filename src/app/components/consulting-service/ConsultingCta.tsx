@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function ConsultingCtaSection() {
   return (
-    <section className="mt-10 lg:mt-15 w-full flex items-center justify-center pb-8">
+    <aside className="mt-10 lg:mt-15 w-full flex items-center justify-center pb-8">
       <div className="max-w-3xl">
         <h2 className="text-2xl font-bold text-heading text-center">
           Ready to Achieve Your Business Goals?
@@ -25,6 +25,6 @@ export function ConsultingCtaSection() {
           </Link>
         </div>
       </div>
-    </section>
+    </aside>
   )
 }
