@@ -5,7 +5,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    name: 'Software Development Services',
+    name: 'Software Development',
     path: '/software-development',
   },
   { name: 'Digital Experience & Design', path: '/digital-experience-design' },

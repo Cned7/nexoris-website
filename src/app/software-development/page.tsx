@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const breadcrumbs = [
   { name: 'Home', href: '/', isCurrentPage: false },
   {
-    name: 'Software Development Services',
+    name: 'Software Development',
     href: '/development-services',
     isCurrentPage: true,
   },
@@ -62,7 +62,7 @@ const servicesSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Nexoris Software Development Services',
-  url: 'https://nexoristech.com/software-development-services',
+  url: 'https://nexoristech.com/software-development',
   description:
     'Custom software, mobile apps, APIs, DevOps, and cloud solutions tailored for scalable business growth.',
   provider: {
@@ -90,7 +90,7 @@ export default function DevelopmentServicePage() {
       <Head>
         <link
           rel="canonical"
-          href="https://nexoristech.com/software-development-services"
+          href="https://nexoristech.com/software-development"
         />
         {/* Organization Schema in Head */}
         <script

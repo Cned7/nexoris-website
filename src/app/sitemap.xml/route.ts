@@ -1,29 +1,38 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextResponse } from 'next/server'
 import { format } from 'date-fns'
 import { SitemapStream, streamToPromise } from 'sitemap'
+import fs from 'fs'
+import path from 'path'
 
 // Helper function to get the current date in ISO format
 const getCurrentDate = () => format(new Date(), 'yyyy-MM-dd')
 
-// Fetching dynamic blog posts from a static file or API
+// Dynamically fetching URLs from files in a directory
 const fetchDynamicUrls = async () => {
-  // Simulate fetching dynamic blog slugs
-  const blogPostSlugs = ['post-1', 'post-2', 'post-3'] 
+  // Reading blog post slugs from a directory
+  const blogDirectory = path.join(process.cwd(), 'posts')
 
-  return blogPostSlugs.map((slug) => ({
-    url: `/blog/${slug}`,
-    lastmod: getCurrentDate(),
-    changefreq: 'weekly',
-    priority: 0.8,
-  }))
+  // Read all files in the blog directory
+  const fileNames = fs.readdirSync(blogDirectory)
+
+  // Generate URLs for each blog post based on file names
+  return fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, '')
+    return {
+      url: `/blog/${slug}`,
+      lastmod: getCurrentDate(),
+      changefreq: 'weekly',
+      priority: 0.8,
+    }
+  })
 }
 
-const generateSitemap = async (req: NextApiRequest, res: NextApiResponse) => {
+export async function GET() {
   try {
     // Create a new SitemapStream instance
     const sitemap = new SitemapStream({ hostname: 'https://nexoristech.com' })
 
-    // Static URLs - these would need to be manually added/updated
+    // Static URLs
     const staticUrls = [
       {
         url: '/',
@@ -89,19 +98,19 @@ const generateSitemap = async (req: NextApiRequest, res: NextApiResponse) => {
     // End the sitemap stream
     sitemap.end()
 
-    // Convert the sitemap stream to a promise and send the response
+    // Convert the sitemap stream to a promise
     const sitemapXml = await streamToPromise(sitemap)
-    res.setHeader('Content-Type', 'application/xml')
-    res.setHeader(
-      'Cache-Control',
-      'public, max-age=86400, stale-while-revalidate=86400'
-    ) // Cache for 1 day
-    res.status(200).send(sitemapXml)
+
+    // Return the response with the appropriate headers
+    return NextResponse.json(sitemapXml, {
+      headers: {
+        'Content-Type': 'application/xml',
+        'Cache-Control': 'public, max-age=86400, stale-while-revalidate=86400', // Cache for 1 day
+      },
+    })
   } catch (error) {
     // Error handling
     console.error('Error generating sitemap:', error)
-    res.status(500).send('Internal Server Error')
+    return NextResponse.json('Internal Server Error', { status: 500 })
   }
 }
-
-export default generateSitemap
