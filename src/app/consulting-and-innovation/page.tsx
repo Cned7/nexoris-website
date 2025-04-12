@@ -77,6 +77,13 @@ export default function ConsultingServicePage() {
           rel="canonical"
           href="https://nexoristech.com/consulting-and-innovation"
         />
+        {/* JSON-LD Schema for Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
       </Head>
 
       <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
