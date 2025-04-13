@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <Link
-            href="/insight"
+            href="/blog"
             className="hover:text-secondary-text border border-transparent hover:border-button hover:bg-button rounded-lg px-4 py-2 font-heading"
           >
             Insight

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Head from 'next/head' // Import the Head component
-import Breadcrumbs from '../components/Breadcrumbs'
+import Breadcrumbs from '../../../components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Nexoris Technologies',

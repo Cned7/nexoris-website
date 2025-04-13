@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import MarketingHero from '../components/marketing-analytics/MarketingHero'
-import MarketingServiceCards from '../components/marketing-analytics/ServiceCards'
-import MarketingServices from '../components/marketing-analytics/MarketingServices'
-import Breadcrumbs from '../components/Breadcrumbs'
+import MarketingHero from '../../../components/marketing-analytics/MarketingHero'
+import MarketingServiceCards from '../../../components/marketing-analytics/ServiceCards'
+import MarketingServices from '../../../components/marketing-analytics/MarketingServices'
+import Breadcrumbs from '../../../components/Breadcrumbs'
 
 // Metadata for the page
 export const metadata: Metadata = {

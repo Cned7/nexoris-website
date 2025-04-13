@@ -5,32 +5,32 @@ import Link from 'next/link'
 
 const services = [
   {
-    title: 'Technology & Development',
+    title: 'Software Development',
     description:
       'Custom software solutions, mobile apps, and scalable platforms. Built to solve complex problems and fuel growth.',
     Icon: FaCode,
-    link: '/technology-development',
+    link: '/software-development',
   },
   {
-    title: 'Cloud & Automation',
+    title: 'Consulting & Immovation',
     description:
-      'Streamline operations, boost agility, and scale with confidence using our cloud solutions, DevOps engineering, and intelligent automation.',
+      'Boost efficiency, drive innovation, and scale confidently with our expert consulting and cloud solutions..',
     Icon: FaCloud,
-    link: '/cloud-automation',
+    link: '/consulting-and-innovation',
   },
   {
     title: 'Design & Experience',
     description:
       'Intuitive and human-centered designs. From concept to interface, we create digital experiences your customers will love.',
     Icon: FaPalette,
-    link: '/design-experience',
+    link: '/digital-experience-design',
   },
   {
-    title: 'Marketing & Growth',
+    title: 'Marketing & Analytics',
     description:
       'Data-driven marketing solutions. From customer acquisition to retention, we help your brand thrive in a competitive landscape.',
     Icon: FaChartLine,
-    link: '/marketing-growth',
+    link: '/marketing-and-analytics',
   },
 ]
 

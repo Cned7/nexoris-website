@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Breadcrumbs from '../components/Breadcrumbs'
+import Breadcrumbs from '../../../components/Breadcrumbs'
 import { Metadata } from 'next'
-import ConsultingServiceCards from '../components/consulting-service/ConsultingServiceCards'
-import ConsultingHero from '../components/consulting-service/ConsultingHero'
-import ConsultingServices from '../components/consulting-service/ConsultationServices'
-import { ConsultingCtaSection } from '../components/consulting-service/ConsultingCta'
+import ConsultingServiceCards from '../../../components/consulting-service/ConsultingServiceCards'
+import ConsultingHero from '../../../components/consulting-service/ConsultingHero'
+import ConsultingServices from '../../../components/consulting-service/ConsultationServices'
+import { ConsultingCtaSection } from '../../../components/consulting-service/ConsultingCta'
 
 // Metadata for the page
 export const metadata: Metadata = {
