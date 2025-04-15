@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Head from 'next/head'
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default function ContactPage() {
   const [service, setService] = useState('')

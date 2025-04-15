@@ -1,12 +1,12 @@
 import Head from 'next/head'
-import Hero from '../../../components/design-experience/DesignHero'
-import { ProductDesign } from '../../../components/design-experience/ProductDesign'
-import { UIUXDesign } from '../../../components/design-experience/UiUxDesign'
-import { ARVRDevelopment } from '../../../components/design-experience/ArVrDevelopment'
-import { DesignCtaSection } from '../../../components/design-experience/UiUxCta'
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import Hero from '@/components/design-experience/DesignHero'
+import { ProductDesign } from '@/components/design-experience/ProductDesign'
+import { UIUXDesign } from '@/components/design-experience/UiUxDesign'
+import { ARVRDevelopment } from '@/components/design-experience/ArVrDevelopment'
+import { DesignCtaSection } from '@/components/design-experience/UiUxCta'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
-import DesignServiceCards from '../../../components/design-experience/DesignServicesCard'
+import DesignServiceCards from '@/components/design-experience/DesignServicesCard'
 
 export const metadata: Metadata = {
   title: 'Digital Experience & Design',

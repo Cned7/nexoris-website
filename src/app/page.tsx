@@ -1,11 +1,12 @@
-import HomeHero from '../../components/homepage/Hero'
-import OurServices from '../../components/homepage/OurServices'
-import WhyNexoris from '../../components/homepage/WhyNexoris'
-import IndustriesSection from '../../components/homepage/IndustriesSection'
-import OurProcess from '../../components/homepage/OurProcess'
-import TechStack from '../../components/homepage/TechStack'
-import Faqs from '../../components/homepage/Faqs'
-import Schema from '../../components/Schema'
+import HomeHero from '@/components/homepage/Hero'
+import OurServices from '@/components/homepage/OurServices'
+import WhyNexoris from '@/components/homepage/WhyNexoris'
+import IndustriesSection from '@/components/homepage/IndustriesSection'
+import OurProcess from '@/components/homepage/OurProcess'
+import TechStack from '@/components/homepage/TechStack'
+import Faqs from '@/components/homepage/Faqs'
+import Schema from '@/components/Schema'
+import LatestBlogSection from '@/components/homepage/BlogSection'
 
 export const metadata = {
   title: 'Next-Gen Software Solutions | Nexoris Technologies Ltd',
@@ -134,9 +135,11 @@ export default function Home() {
       <section>
         <TechStack />
       </section>
-
       <section>
         <Faqs />
+      </section>
+      <section>
+        <LatestBlogSection />
       </section>
     </main>
   )

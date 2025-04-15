@@ -1,8 +1,9 @@
 import './globals.css'
 import { Inter, Roboto } from 'next/font/google'
 import type { Metadata } from 'next'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import { Toaster } from 'react-hot-toast'
 
 const heading = Inter({
   subsets: ['latin'],
@@ -160,6 +161,7 @@ export default function RootLayout({
 
         {/* Main content area */}
         <main className="relative z-0 bg-background">{children}</main>
+        <Toaster />
 
         {/* Footer rendered across all pages */}
         <Footer className="relative z-0" />

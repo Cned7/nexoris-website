@@ -1,10 +1,22 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from 'next'
+/** @type {import('next').NextConfig} */
 
 const nextConfig: NextConfig = {
   reactStrictMode: true, // Ensures React runs in strict mode
-};
 
-export default nextConfig;
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
+      },
+    ],
+  },
+}
+
+export default nextConfig
 
 module.exports = {
   async headers() {
@@ -18,6 +30,8 @@ module.exports = {
           },
         ],
       },
-    ];
+    ]
   },
-};
+}
+
+module.exports = nextConfig

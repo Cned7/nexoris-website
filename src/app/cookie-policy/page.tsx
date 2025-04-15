@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import Head from 'next/head' // Import the Head component
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | Nexoris Technologies',
@@ -63,14 +63,42 @@ const CookiePolicy = () => {
             1. Introduction
           </h2>
           <p>
-            Welcome to Nexoris Technologies (&quot;we&quot;, &quot;our&quot;,
-            &quot;us&quot;). This Cookie Policy explains what cookies are, how
-            we use them, and your choices regarding cookies. By using our
-            website, you consent to the use of cookies as described in this
-            policy.
+            At Nexoris Technologies Ltd, we believe in being clear and open
+            about how we collect and use data. This Cookie Policy explains what
+            cookies are, how we use them, and your choices when it comes to
+            managing cookies on our website.
           </p>
 
-          {/* ... rest of your Cookie Policy content ... */}
+          <article className="text-text">
+            <h2 className="text-2xl">What are cookies?</h2>
+            <p>
+              Cookies are small text files stored on your device (computer,
+              tablet, or mobile) when you visit a website. They help websites
+              remember your preferences, improve performance, and provide a more
+              personalized experience.
+            </p>
+            <h2 className="text-2xl">Why we use cookies</h2>
+            <p>We use cookies for a few key reasons:</p>
+            <ul className="disc text-text font-lg">
+              <li>
+                <strong>To make our website work properly</strong> – some
+                cookies are essential.
+              </li>
+              <li>
+                <strong>To understand how people use our site</strong> – so we
+                can keep improving it.
+              </li>
+              <li>
+                <strong>To personalize your experience</strong> – based on your
+                preferences and behavior.
+              </li>
+              <li>
+                <strong>To serve relevant marketing</strong> – so our ads are
+                meaningful and not spammy.
+              </li>
+            </ul>
+            <h2>Types of cookies we use</h2>
+          </article>
         </section>
       </main>
     </>

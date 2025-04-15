@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import React from 'react'
-import TechStack from '../../../components/homepage/TechStack'
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import TechStack from '@/components/homepage/TechStack'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Head from 'next/head' // Import Head component
 
 const breadcrumbs = [

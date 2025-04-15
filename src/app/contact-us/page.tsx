@@ -1,6 +1,7 @@
 import ContactPage from './ContactClient'
 import { Metadata } from 'next'
 import Head from 'next/head' // Import Head component
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Nexoris Technologies',

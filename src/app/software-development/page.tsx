@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import TechHero from '../../../components/development-services/TechHero'
-import TechServiceCards from '../../../components/development-services/ServiceCards'
-import TechServices from '../../../components/development-services/TechServices'
-import Breadcrumbs from '../../../components/Breadcrumbs'
+import TechHero from '@/components/development-services/TechHero'
+import TechServiceCards from '@/components/development-services/ServiceCards'
+import TechServices from '@/components/development-services/TechServices'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { Metadata } from 'next'
 
 // Metadata for the page
