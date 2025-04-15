@@ -6,11 +6,9 @@ import { useRouter } from 'next/navigation'
 import { BlogPost } from '@/lib/types'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { FaClipboard } from 'react-icons/fa' // Import your chosen icon
-import Loader from '@/components/Loader'
 import moment from 'moment'
 import { toast } from 'react-hot-toast'
 
@@ -51,16 +49,14 @@ const BlogPostPage = ({ params }: { params: Promise<{ slug: string }> }) => {
 
   if (loading)
     return (
-      <div className="max-w-screen-md mx-auto flex items-center justify-center">
-        <Loader />
-      </div>
+      <div className="max-w-screen-md mx-auto flex items-center justify-center"></div>
     )
   if (error) return <p className="max-w-screen-md mx-auto">Error: {error}</p>
   if (!post) return <p className="max-w-screen-md mx-auto">No post found.</p>
   console.log(post)
   return (
-    <div className="max-w-screen-md mx-auto p-4">
-      <h1 className="text-4xl leading-[60px] capitalize text-center font-bold text-purple-800 font-jet-brains">
+    <div className="max-w-screen-md mx-auto p-4 mt-28">
+      <h1 className="text-4xl leading-[60px] capitalize text-center font-bold text-heading font-jet-brains">
         {post.title}
       </h1>
       <div className="w-full flex items-center justify-center font-light">
@@ -93,7 +89,6 @@ const BlogPostPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       <div className={'leading-[40px] max-w-screen-lg prose prose-invert'}>
         <Markdown
           remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeRaw]}
           components={{
             code({ inline, className, children, ...props }: any) {
               const match = /language-(\w+)/.exec(className || '')

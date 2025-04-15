@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { BlogPost } from '@/lib/types'
 import { getAllPosts } from '@/lib/api'
 import BlogCard from '../blog/BlogCard'
-import Loader from '@/components/Loader'
 import Link from 'next/link'
 
 const LatestBlogSection = () => {
@@ -35,11 +34,7 @@ const LatestBlogSection = () => {
         From Our Blog
       </h2>
 
-      {loading && (
-        <div className="flex justify-center items-center">
-          <Loader />
-        </div>
-      )}
+      {loading && <div className="flex justify-center items-center"></div>}
 
       {error && <p className="text-red-500 text-center">{error}</p>}
 

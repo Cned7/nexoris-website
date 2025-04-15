@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { getAllPosts } from '@/lib/api'
 import { BlogPost } from '@/lib/types'
-import Loader from '@/components/Loader'
 import Pagination from '@/components/Pagination'
 import BlogCard from '@/components/blog/BlogCard'
 import Breadcrumbs from '@/components/Breadcrumbs'
@@ -60,9 +59,7 @@ export default function BlogPage() {
         Nexoris Blog
       </h1>
       {loading && (
-        <div className="w-full flex items-center justify-center">
-          <Loader />
-        </div>
+        <div className="w-full flex items-center justify-center"></div>
       )}
       {error && <p>{error}</p>}
 
