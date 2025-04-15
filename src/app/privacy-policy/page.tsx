@@ -51,7 +51,7 @@ const PrivacyPolicyPage = () => {
       {privacyPolicy ? (
         <div dangerouslySetInnerHTML={{ __html: privacyPolicy }} />
       ) : (
-        <p>Sorry, there was an error loading the privacy policy content.</p>
+        <p>Sorry, there was an error loading the privacy policy content</p>
       )}
     </div>
   )
