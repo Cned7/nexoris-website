@@ -3,8 +3,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+// Define an interface for the cover image
+interface CoverImage {
+  url: string
+  alternativeText?: string
+}
+
+// Define an interface for the attributes of the blog post
+interface BlogPostAttributes {
+  title: string
+  content: string
+  coverImage?: CoverImage
+}
+
+// Define the BlogPostProps interface to type the post prop
 interface BlogPostProps {
-  post: any
+  post: {
+    attributes: BlogPostAttributes
+  }
 }
 
 export default function BlogPost({ post }: BlogPostProps) {

@@ -3,8 +3,16 @@
 
 import { useEffect, useState } from 'react'
 
+// Define an interface for the blog post
+interface BlogPost {
+  title: string
+  excerpt: string
+  // Add other fields that are present in your blog post data
+}
+
 const BlogPostClient = ({ slug }: { slug: string }) => {
-  const [post, setPost] = useState<any>(null)
+  // Use the BlogPost interface for the state type
+  const [post, setPost] = useState<BlogPost | null>(null)
 
   useEffect(() => {
     const fetchPost = async () => {

@@ -1,7 +1,6 @@
 import ContactPage from './ContactClient'
 import { Metadata } from 'next'
 import Head from 'next/head' // Import Head component
-import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Nexoris Technologies',
@@ -107,6 +106,7 @@ export default function Contact() {
         />
       </Head>
       {/* Render the ContactPage component which contains the form */}
+
       <ContactPage />
       {/* BreadcrumbList Schema in return (placed after the main content) */}
       <script
