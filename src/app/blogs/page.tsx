@@ -32,12 +32,14 @@ const BlogPage = () => {
   if (error) return <p className="max-w-screen-md mx-auto p-4">{error}</p>
 
   return (
-    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+    // 👇 This wrapper ensures footer stays down and layout is stable
+    <main className="flex flex-col min-h-screen mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
       <section>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </section>
 
-      <div className="max-w-screen-xl mx-auto p-4 min-h-screen">
+      {/* 👇 Content wrapper takes remaining space to prevent layout shift */}
+      <div className="flex-grow max-w-screen-xl mx-auto p-4">
         <h1 className="text-3xl font-bold text-heading mb-8 text-center font-jet-brains">
           All Blog Posts
         </h1>
@@ -45,10 +47,10 @@ const BlogPage = () => {
         {posts.length === 0 ? (
           <p className="text-center text-text">No blog posts found.</p>
         ) : (
-          // ✅ Responsive grid layout applied here
+          // 👇 Responsive layout: 1 column on mobile, 2 on md, 4 on lg
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {posts.map((post) => (
-              <BlogCard key={post.id} post={post} /> // ✅ Using your reusable card
+              <BlogCard key={post.id} post={post} />
             ))}
           </div>
         )}
