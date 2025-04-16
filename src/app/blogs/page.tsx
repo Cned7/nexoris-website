@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { getAllPosts } from '@/lib/api'
 import { BlogPost } from '@/lib/types'
@@ -28,7 +28,7 @@ export default function BlogPage() {
         setPosts(posts)
         setTotalPages(pagination.pageCount)
       } catch (error) {
-        setError('Error fetching posts.')
+        setError('Error fetching posts. Please try again later.')
         console.error('Error fetching posts:', error)
       } finally {
         setLoading(false)
@@ -44,6 +44,7 @@ export default function BlogPage() {
     router.push(`?${newParams.toString()}`)
     setLoading(true)
   }
+
   const breadcrumbs = [
     { name: 'Home', href: '/', isCurrentPage: false },
     {
@@ -52,34 +53,43 @@ export default function BlogPage() {
       isCurrentPage: true,
     },
   ]
+
   return (
-    <div className="mx-4 md:mx-6 lg:mx-12 mt-28 lg:mt-36 xl:mx-21">
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <h1 className="text-center text-4xl text-heading font-bold mb-16">
-        Nexoris Blog
-      </h1>
-      {loading && (
-        <div className="w-full flex items-center justify-center"></div>
-      )}
-      {error && <p>{error}</p>}
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="mx-4 md:mx-6 lg:mx-12 mt-28 lg:mt-36 xl:mx-21">
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <h1 className="text-center text-4xl text-heading font-bold mb-16">
+          Nexoris Blog
+        </h1>
 
-      {!loading && !error && (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {posts.length > 0 ? (
-              posts.map((post) => <BlogCard key={post.id} post={post} />)
-            ) : (
-              <p className="text-gray-400">No posts available at the moment.</p>
-            )}
+        {loading && !error && (
+          <div className="w-full flex items-center justify-center">
+            Loading posts...
           </div>
+        )}
 
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
-        </>
-      )}
-    </div>
+        {error && <p>{error}</p>}
+
+        {!loading && !error && (
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {posts.length > 0 ? (
+                posts.map((post) => <BlogCard key={post.id} post={post} />)
+              ) : (
+                <p className="text-gray-400">
+                  No posts available at the moment.
+                </p>
+              )}
+            </div>
+
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          </>
+        )}
+      </div>
+    </Suspense>
   )
 }

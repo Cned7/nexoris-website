@@ -9,22 +9,25 @@ const getCurrentDate = () => format(new Date(), 'yyyy-MM-dd')
 
 // Dynamically fetching URLs from files in a directory
 const fetchDynamicUrls = async () => {
-  // Reading blog post slugs from a directory
   const blogDirectory = path.join(process.cwd(), 'posts')
 
-  // Read all files in the blog directory
-  const fileNames = fs.readdirSync(blogDirectory)
+  try {
+    const fileNames = fs.readdirSync(blogDirectory)
 
-  // Generate URLs for each blog post based on file names
-  return fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '')
-    return {
-      url: `/blog/${slug}`,
-      lastmod: getCurrentDate(),
-      changefreq: 'weekly',
-      priority: 0.8,
-    }
-  })
+    // Generate URLs for each blog post based on file names
+    return fileNames.map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '')
+      return {
+        url: `/blog/${slug}`,
+        lastmod: getCurrentDate(),
+        changefreq: 'weekly',
+        priority: 0.8,
+      }
+    })
+  } catch (error) {
+    console.error('Error reading blog directory:', error)
+    return []
+  }
 }
 
 export async function GET() {
