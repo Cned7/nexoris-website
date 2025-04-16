@@ -1,5 +1,4 @@
 // src/components/Pagination.tsx
-'use client'
 import React from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa' // Import arrow icons from react-icons
 
