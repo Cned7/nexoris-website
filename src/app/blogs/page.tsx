@@ -1,90 +1,60 @@
-// ✅ Revised Home Page (/page.tsx)
-
 'use client'
+
 import { useEffect, useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
-import Link from 'next/link'
 import { getAllPosts } from '@/lib/api'
 import { BlogPost } from '@/lib/types'
-import Pagination from '@/components/Pagination'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import BlogCard from '@/components/blog/BlogCard'
 
-export default function Home() {
+const breadcrumbs = [
+  { name: 'Home', href: '/', isCurrentPage: false },
+  { name: 'Insight', href: '/blogs', isCurrentPage: true },
+]
+
+const BlogPage = () => {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [error, setError] = useState<string | null>(null)
-  const [totalPages, setTotalPages] = useState(1)
-
-  const searchParams = useSearchParams()
-  const router = useRouter()
-
-  const pageParam = searchParams.get('page')
-  const currentPage = pageParam ? parseInt(pageParam) : 1
 
   useEffect(() => {
-    const fetchPosts = async (page: number) => {
+    const fetchPosts = async () => {
       try {
-        const { posts, pagination } = await getAllPosts(page)
+        const { posts } = await getAllPosts()
         setPosts(posts)
-        setTotalPages(pagination.pageCount)
-      } catch (error) {
-        setError('Error fetching posts.')
-        console.error('Error fetching posts:', error)
+      } catch (err) {
+        setError('Failed to load blog posts.')
+        console.error(err)
       }
     }
 
-    fetchPosts(currentPage)
-  }, [currentPage])
+    fetchPosts()
+  }, [])
 
-  const handlePageChange = (newPage: number) => {
-    const newParams = new URLSearchParams(searchParams.toString())
-    newParams.set('page', newPage.toString())
-    router.push(`?${newParams.toString()}`)
-  }
+  if (error) return <p className="max-w-screen-md mx-auto p-4">{error}</p>
 
   return (
-    <div className="max-w-screen-lg mx-auto p-4">
-      {error && <p className="text-red-500">{error}</p>}
+    <main className="mx-4 md:mx-6 lg:mx-12 mt-20 lg:mt-28 xl:mx-21">
+      <section>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.length > 0 ? (
-          posts.map((post) => (
-            <div
-              key={post.id}
-              className="cursor-pointer bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-            >
-              <Link href={`/blogs/${post.slug}`} className="block">
-                {post.cover?.url && (
-                  <div className="relative h-36 w-full">
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${post.cover.url}`}
-                      alt={post.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold font-jet-brains text-white line-clamp-2">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-400 mt-2 text-sm leading-6 line-clamp-3">
-                    {post.description}
-                  </p>
-                  <p className="text-purple-400 text-sm mt-4 inline-block font-medium hover:underline">
-                    Read More
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ))
+      <div className="max-w-screen-xl mx-auto p-4 min-h-screen">
+        <h1 className="text-3xl font-bold text-heading mb-8 text-center font-jet-brains">
+          All Blog Posts
+        </h1>
+
+        {posts.length === 0 ? (
+          <p className="text-center text-text">No blog posts found.</p>
         ) : (
-          <p className="text-gray-400">No posts available at the moment.</p>
+          // ✅ Responsive grid layout applied here
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {posts.map((post) => (
+              <BlogCard key={post.id} post={post} /> // ✅ Using your reusable card
+            ))}
+          </div>
         )}
       </div>
-
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-    </div>
+    </main>
   )
 }
+
+export default BlogPage
