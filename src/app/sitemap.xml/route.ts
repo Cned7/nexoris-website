@@ -12,13 +12,21 @@ const fetchDynamicUrls = async () => {
   const blogDirectory = path.join(process.cwd(), 'posts')
 
   try {
+    // Check if the directory exists before trying to read it
+    if (!fs.existsSync(blogDirectory)) {
+      console.log(
+        `Directory ${blogDirectory} does not exist, skipping dynamic URLs fetching.`
+      )
+      return []
+    }
+
     const fileNames = fs.readdirSync(blogDirectory)
 
     // Generate URLs for each blog post based on file names
     return fileNames.map((fileName) => {
       const slug = fileName.replace(/\.md$/, '')
       return {
-        url: `/blog/${slug}`,
+        url: `/blogs/${slug}`,
         lastmod: getCurrentDate(),
         changefreq: 'weekly',
         priority: 0.8,
@@ -80,7 +88,7 @@ export async function GET() {
         priority: 0.9,
       },
       {
-        url: '/blog',
+        url: '/blogs',
         lastmod: getCurrentDate(),
         changefreq: 'daily',
         priority: 0.6,
