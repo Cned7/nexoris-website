@@ -86,13 +86,13 @@ const BlogPostPage = () => {
             )}
 
             <div
-              className="prose prose-invert max-w-none"
+              className="prose prose-invert max-w-none text-text text-lg"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
             <button
               onClick={() => router.back()}
-              className="text-heading mt-4 inline-block hover:underline mt-12 font-semibold"
+              className="text-heading mt-4 inline-block hover:underline mt-12 font-semibold cursor-pointer"
             >
               Back to Blogs
             </button>
