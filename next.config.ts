@@ -1,32 +1,25 @@
-import type { NextConfig } from 'next'
 /** @type {import('next').NextConfig} */
-
-const nextConfig: NextConfig = {
-  reactStrictMode: true, // Ensures React runs in strict mode
+const nextConfig = {
+  reactStrictMode: true,
 
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
+        protocol: 'https',
+        hostname: 'nexoris-cms.onrender.com',
         pathname: '/uploads/**',
       },
     ],
   },
-}
 
-export default nextConfig
-
-module.exports = {
   async headers() {
     return [
       {
-        source: '/:path*', // Apply the header to all routes
+        source: '/:path*',
         headers: [
           {
             key: 'X-Robots-Tag',
-            value: 'index, follow', // Modify this value as needed
+            value: 'index, follow',
           },
         ],
       },
